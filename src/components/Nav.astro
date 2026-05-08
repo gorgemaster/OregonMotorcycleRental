@@ -2,8 +2,9 @@
 ---
 <header>
   <div class="logo-bar">
-    <a href="/">
-      <img src="/images/2016/10/OMR-Logo-10-20-2016.png" alt="Oregon Motorcycle Rental" class="site-logo" />
+    <a href="/" class="logo-link">
+      <img src="/images/2016/10/OMR-Logo-10-20-2016.png" alt="" class="site-logo" onerror="this.style.display='none'" />
+      <span class="logo-text">Oregon Motorcycle Rental</span>
     </a>
   </div>
   <div class="header-inner">
@@ -28,7 +29,7 @@
     border-bottom: 3px solid var(--rust);
   }
   .logo-bar {
-    background: #fff;
+    background: var(--cream-soft);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -59,4 +60,13 @@
   }
   nav a { text-decoration: none; color: var(--cream); padding: 4px 0; }
   nav a:hover { color: var(--rust); }
+  .logo-link { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+  .logo-text {
+    font-family: 'Big Shoulders Display', sans-serif;
+    font-weight: 900;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+    color: var(--leather);
+  }
 </style>
