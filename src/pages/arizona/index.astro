@@ -1,0 +1,297 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const highlights = [
+  { label: 'Season', value: 'December – March' },
+  { label: 'Terrain', value: 'Desert washes, sandy single track, high desert' },
+  { label: 'Difficulty', value: 'Beginner to Advanced' },
+  { label: 'From Phoenix', value: 'On trail in 1 hour from Sky Harbor' },
+];
+
+const whyList = [
+  'Escape PNW winter rain — desert sun and 65°F temps in January',
+  'Wickenburg trails open when everything in Oregon is frozen',
+  'Sandy washes and desert singletrack are totally different riding',
+  'Phoenix is a hub — direct flights from everywhere',
+  'Same guide, same gear quality, same OMR experience',
+  'Great for skill-building: desert riding rewards smooth technique',
+];
+---
+
+<Layout
+  title="Off Road Motorcycle Rental - Phoenix Arizona | Oregon Motorcycle Rental"
+  description="Join us December 1st through March 1st in sunny Arizona for epic guided off road enduro moto tours through the desert. Temps are perfect this time of year!"
+>
+
+  <section class="hero">
+    <div class="hero-bg">
+      <img src="/images/2017/12/Arizona-Motorcyle-Riders-Group.jpg" alt="Arizona desert dirt bike riding" class="hero-img" />
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="hero-body wrap">
+      <p class="eyebrow">Arizona — Winter Riding</p>
+      <h1 class="display hero-title">Arizona.</h1>
+      <p class="hero-sub">December through March, near Wickenburg. Skip the PNW winter. Desert riding at 65°F, on trail in an hour from Phoenix Sky Harbor.</p>
+      <div class="hero-actions">
+        <a href="/contact/" class="btn btn-big">Book Arizona</a>
+        <span class="hero-season">Dec 1 – Mar 1 annually</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="highlights-strip">
+    <div class="wrap highlights-inner">
+      {highlights.map(h => (
+        <div class="highlight-item">
+          <span class="highlight-label">{h.label}</span>
+          <span class="highlight-value">{h.value}</span>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="arizona-intro">
+    <div class="wrap intro-grid">
+      <div class="intro-text">
+        <p class="section-label">Why Arizona</p>
+        <h2 class="display intro-title">We go south for the winter. Come with us.</h2>
+        <p>Oregon and Washington are incredible from May through October. But December through March? Doug and the fleet head to Wickenburg, Arizona — and the riding is completely different and completely worth it.</p>
+        <p>The Wickenburg area delivers miles of desert wash riding, sandy arroyos, saguaro-framed singletrack, and high desert terrain that you simply can't find in the Pacific Northwest. The topography is endlessly varied — from flat, fast washes to technical rocky canyon climbs.</p>
+        <p>Temperatures sit in the 60s most days. You can fly into Phoenix, meet Doug at the trailhead, and be riding within the hour. It's the fastest trail-to-front-door ratio of any OMR location.</p>
+      </div>
+      <div class="intro-image-wrap">
+        <img src="/images/2017/12/Arizona-Motorcyle-Rider.jpg" alt="Desert dirt bike rider Arizona" class="intro-img" loading="lazy" />
+        <div class="intro-img-badge">
+          <span class="badge-temp">~65°F</span>
+          <span class="badge-label">avg December temp</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="terrain-photos">
+    <div class="terrain-grid">
+      <div class="terrain-cell terrain-cell--large">
+        <img src="/images/2017/12/Arizona-Motorcyle-Riders-Terrain.jpg" alt="Arizona desert terrain" class="terrain-img" loading="lazy" />
+        <div class="terrain-label">High Desert Singletrack</div>
+      </div>
+      <div class="terrain-cell">
+        <img src="/images/2017/01/Arizona-Motorcycle-Training.jpg" alt="Motorcycle training in Arizona" class="terrain-img" loading="lazy" />
+        <div class="terrain-label">Desert Training</div>
+      </div>
+      <div class="terrain-cell">
+        <img src="/images/2017/01/Off-Road-Motorcyle-Training-AZ1.jpg" alt="Off road training Arizona" class="terrain-img" loading="lazy" />
+        <div class="terrain-label">Rocky Canyon Climbs</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="why-section">
+    <div class="wrap why-grid">
+      <div>
+        <p class="section-label">Six Reasons</p>
+        <h2 class="display why-title">Why riders choose<br>Arizona over winter.</h2>
+      </div>
+      <ul class="why-list">
+        {whyList.map(item => (
+          <li class="why-item">{item}</li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <section class="bikes-strip">
+    <div class="wrap bikes-inner">
+      <div class="bikes-text">
+        <p class="section-label">The Fleet</p>
+        <h2 class="display bikes-title">Same bikes. Different desert.</h2>
+        <p>The full OMR fleet is in Arizona for the season — KTM and Husqvarna 150s, 300s, and 450s. Same Rekluse auto-clutch setup, same gear included, same standard of preparation. The only thing different is the sand and the cacti.</p>
+      </div>
+      <div class="bikes-thumbnails">
+        <img src="/images/2025/02/Arizona-Dirt-Bike-Rentals-KTM-300-XC-2023.jpg" alt="KTM 300 XC in Arizona" class="bike-thumb" loading="lazy" />
+        <img src="/images/2025/02/Arizona-Dirt-Bike-Rentals-Husqvarna-300-TE-2023.jpg" alt="Husqvarna TE 300i in Arizona" class="bike-thumb" loading="lazy" />
+        <img src="/images/2025/02/Arizona-Dirt-Bike-Rentals-KTM-150-XC-W-2022.jpg" alt="KTM 150 XC-W in Arizona" class="bike-thumb" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <section class="logistics-section">
+    <div class="wrap">
+      <p class="section-label">Getting There</p>
+      <h2 class="display logistics-title">Easy to reach. Hard to leave.</h2>
+      <div class="logistics-cards">
+        <div class="logistics-card">
+          <span class="logistics-num">01</span>
+          <h3 class="display logistics-card-title">Fly into Phoenix</h3>
+          <p>Phoenix Sky Harbor (PHX) has direct flights from Portland, Seattle, and most western cities. Cheap fares in January are the norm.</p>
+        </div>
+        <div class="logistics-card">
+          <span class="logistics-num">02</span>
+          <h3 class="display logistics-card-title">Meet Doug in Wickenburg</h3>
+          <p>About 1 hour north of Phoenix on US-60. Wickenburg is a classic Arizona cowboy town with good lodging and food. Doug meets you there.</p>
+        </div>
+        <div class="logistics-card">
+          <span class="logistics-num">03</span>
+          <h3 class="display logistics-card-title">On trail in an hour</h3>
+          <p>Gear up, go. The trailhead is minutes from town. Desert riding starts immediately — no long haul to the staging area.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="final-cta">
+    <div class="final-cta-bg"></div>
+    <div class="wrap final-cta-body">
+      <p class="section-label final-label">Desert Season</p>
+      <h2 class="display final-title">Dec 1 – Mar 1.<br>Don't miss it.</h2>
+      <a href="tel:5092810156" class="final-phone">509 · 281 · 0156</a>
+      <p class="final-note">Call Doug to check availability — Arizona books fast.</p>
+      <a href="/contact/" class="btn-outline-light btn-big">Send a Message</a>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  .hero {
+    position: relative;
+    min-height: 88vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    color: var(--cream);
+  }
+  .hero-bg { position: absolute; inset: 0; z-index: 0; }
+  .hero-img { width: 100%; height: 100%; object-fit: cover; object-position: center 40%; }
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(105deg,
+      color-mix(in srgb, var(--ink) 82%, transparent) 0%,
+      color-mix(in srgb, var(--ink) 55%, transparent) 55%,
+      color-mix(in srgb, var(--ink) 20%, transparent) 100%
+    );
+  }
+  .hero-body { position: relative; z-index: 1; padding: 80px 24px; max-width: 680px; }
+  .hero-title { font-size: clamp(80px, 14vw, 180px); line-height: 0.88; margin: 16px 0 24px; color: var(--cream); }
+  .hero-sub { font-size: 20px; line-height: 1.5; max-width: 520px; opacity: 0.88; margin-bottom: 40px; }
+  .hero-actions { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
+  .hero-season { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.14em; color: var(--rust); }
+
+  .highlights-strip { background: var(--rust); color: var(--cream); padding: 40px 0; }
+  .highlights-inner { display: flex; align-items: stretch; flex-wrap: wrap; }
+  .highlight-item {
+    flex: 1;
+    min-width: 160px;
+    padding: 20px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    border-right: 1px solid color-mix(in srgb, var(--cream) 25%, transparent);
+  }
+  .highlight-item:last-child { border-right: none; }
+  .highlight-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.18em; opacity: 0.7; }
+  .highlight-value { font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: 20px; line-height: 1.2; }
+
+  .arizona-intro { padding: 100px 0; }
+  .intro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+  .intro-title { font-size: clamp(30px, 3.5vw, 48px); color: var(--leather); margin: 12px 0 28px; }
+  .intro-text p { margin-bottom: 20px; font-size: 18px; line-height: 1.7; }
+  .intro-text p:last-child { margin-bottom: 0; }
+  .intro-image-wrap { position: relative; }
+  .intro-img { width: 100%; height: 480px; object-fit: cover; display: block; }
+  .intro-img-badge {
+    position: absolute;
+    bottom: 24px;
+    right: 24px;
+    background: var(--rust);
+    color: var(--cream);
+    padding: 16px 20px;
+    text-align: center;
+  }
+  .badge-temp { display: block; font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: 36px; line-height: 1; }
+  .badge-label { display: block; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.14em; opacity: 0.8; margin-top: 4px; }
+
+  .terrain-photos { padding: 0; }
+  .terrain-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 320px 320px;
+    gap: 4px;
+  }
+  .terrain-cell--large { grid-row: span 2; }
+  .terrain-cell { position: relative; overflow: hidden; }
+  .terrain-img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .terrain-label {
+    position: absolute;
+    bottom: 16px;
+    left: 16px;
+    background: var(--rust);
+    color: var(--cream);
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 5px 12px;
+  }
+
+  .why-section { padding: 100px 0; background: var(--leather); color: var(--cream); }
+  .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+  .why-title { font-size: clamp(32px, 4vw, 56px); color: var(--cream); margin: 12px 0 0; }
+  .why-list { list-style: none; display: flex; flex-direction: column; gap: 20px; padding-top: 8px; }
+  .why-item {
+    font-size: 17px;
+    line-height: 1.5;
+    padding-left: 28px;
+    position: relative;
+    opacity: 0.9;
+  }
+  .why-item::before { content: '→'; position: absolute; left: 0; color: var(--rust); font-weight: 900; }
+
+  .bikes-strip { padding: 100px 0; background: var(--cream-deep); }
+  .bikes-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+  .bikes-title { font-size: clamp(32px, 4vw, 52px); color: var(--leather); margin: 12px 0 20px; }
+  .bikes-text p { font-size: 17px; line-height: 1.7; }
+  .bikes-thumbnails { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+  .bike-thumb { width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; }
+
+  .logistics-section { padding: 100px 0; }
+  .logistics-title { font-size: clamp(32px, 4vw, 52px); color: var(--leather); margin: 12px 0 56px; }
+  .logistics-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  .logistics-card {
+    padding: 48px 36px;
+    background: var(--cream-deep);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .logistics-num {
+    font-family: 'Big Shoulders Display', sans-serif;
+    font-weight: 900;
+    font-size: 64px;
+    color: var(--rust);
+    line-height: 1;
+    opacity: 0.3;
+  }
+  .logistics-card-title { font-size: clamp(20px, 2.2vw, 28px); color: var(--leather); }
+  .logistics-card p { font-size: 16px; line-height: 1.7; color: var(--ink-2); }
+
+  .final-cta { background: var(--ink); color: var(--cream); padding: 100px 0; text-align: center; position: relative; overflow: hidden; }
+  .final-cta-bg { position: absolute; inset: 0; background: url('/images/tire-tread.png') repeat center / 320px auto; opacity: 0.05; pointer-events: none; }
+  .final-cta-body { position: relative; z-index: 1; }
+  .final-label { color: color-mix(in srgb, var(--cream) 60%, transparent); }
+  .final-title { font-size: clamp(48px, 8vw, 96px); color: var(--cream); margin: 16px 0 40px; line-height: 0.95; }
+  .final-phone { display: block; font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: clamp(48px, 9vw, 112px); color: var(--rust); text-decoration: none; line-height: 1; margin-bottom: 24px; letter-spacing: -0.02em; }
+  .final-phone:hover { color: var(--cream); }
+  .final-note { font-size: 18px; opacity: 0.7; margin-bottom: 40px; }
+
+  @media (max-width: 900px) {
+    .intro-grid, .why-grid, .bikes-inner { grid-template-columns: 1fr; gap: 48px; }
+    .terrain-grid { grid-template-columns: 1fr; grid-template-rows: auto; }
+    .terrain-cell--large { grid-row: span 1; }
+    .terrain-cell { aspect-ratio: 16/9; }
+    .logistics-cards { grid-template-columns: 1fr; }
+    .intro-img { height: 300px; }
+    .bikes-thumbnails { grid-template-columns: 1fr; gap: 4px; }
+  }
+</style>

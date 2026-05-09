@@ -1,71 +1,269 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 ---
+
 <Layout
   title="Off Road Motorcycle Training | Oregon Motorcycle Rental"
   description="We offer on trail dirt bike training to help you develop new skill sets and excel on any terrain. Sessions are available for all levels of riding."
 >
-  <section class="page-hero">
-    <div class="wrap">
-      <p class="section-label">On-Trail Training</p>
-      <h1 class="display page-title">Off-Road Motorcycle Training</h1>
-      <p class="page-sub">Interested in improving your skills to build more confidence and speed on the trails?</p>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-bg">
+      <img src="/images/2017/01/Singletrack-Motorcycle-Clinic-1-e1530535918118.jpg" alt="" class="hero-img" />
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="hero-body wrap">
+      <p class="eyebrow">On-Trail Coaching</p>
+      <h1 class="display hero-title">Off-Road<br>Training.</h1>
+      <p class="hero-sub">Interested in improving your skills to build more confidence and speed on the trails? We're here to give you practical, personal coaching — on the trail, not in a classroom.</p>
+      <div class="hero-actions">
+        <a href="tel:5092810156" class="btn btn-big">509-281-0156</a>
+        <a href="/contact/" class="btn-outline-light btn-big">Book a Session</a>
+      </div>
     </div>
   </section>
 
-  <section class="training-detail">
+  <!-- Cost strip -->
+  <section class="cost-strip">
+    <div class="wrap cost-inner">
+      <div class="cost-main">
+        <span class="cost-num">$50</span>
+        <span class="cost-label">per rider / per day<br>added to rental</span>
+      </div>
+      <div class="cost-detail">
+        <p>Simply add training to your <a href="/motorcycle-rental-portland/">bike rental package</a>. You ride the same KTM and Husqvarna bikes — just with expert coaching alongside you the whole time.</p>
+        <ul class="cost-includes">
+          <li>Beginners welcome, including kids 12+ (5&apos;2&quot; and taller)</li>
+          <li>Individual 1:1 sessions or groups of 2–4</li>
+          <li>Your group only — no strangers mixed in</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- What you'll learn -->
+  <section class="skills">
     <div class="wrap">
-      <div class="training-grid">
-        <div class="training-content">
-          <h2 class="display section-title">Improve your skills and riding confidence!</h2>
-          <p>We're here to give you the practical and personal training necessary to improve your riding. We'll discuss your individual needs and develop a custom plan to help build your skills.</p>
-          <p>Everything you learn at OMR will be on the trail — not in a classroom or staged environment. Ride on the latest model Husqvarna and KTM bikes.</p>
-          <ul class="training-features">
-            <li>All skill levels welcome, including complete beginners</li>
-            <li>Kids 12 and up (5'2" and taller)</li>
-            <li>Individual 1:1 sessions or groups of 2–4</li>
-            <li>Groups kept to your crew only — no strangers</li>
-            <li>Custom day planned for your specific needs</li>
-          </ul>
+      <p class="section-label">What We Cover</p>
+      <h2 class="display skills-title">Skills that stick.</h2>
+      <div class="skills-grid">
+        <div class="skill-item">
+          <h3 class="display skill-name">Bike Setup</h3>
+          <p>Pre-ride safety checks so you know the machine is dialed in for your session.</p>
         </div>
-        <div class="training-sidebar">
-          <div class="cost-box">
-            <p class="cost-label">Training Add-On</p>
-            <div class="cost-amount">$50</div>
-            <div class="cost-unit">per rider / per day</div>
-            <p>Added to your <a href="/motorcycle-rental-portland/">bike rental package ($250/day)</a>.</p>
-          </div>
-          <div class="training-cta">
-            <p class="section-label">Book your training day</p>
-            <a href="tel:5092810156" class="btn btn-big">509-281-0156</a>
-            <a href="/contact/" class="btn btn-outline" style="margin-top:12px">Contact Form</a>
-          </div>
+        <div class="skill-item">
+          <h3 class="display skill-name">Proper Gear</h3>
+          <p>What to wear, how armor fits, and how protection works when you need it.</p>
+        </div>
+        <div class="skill-item">
+          <h3 class="display skill-name">Trail Technique</h3>
+          <p>Braking, pivot turns, hill climbs, ledge strikes — coached in real conditions on real trails.</p>
+        </div>
+        <div class="skill-item">
+          <h3 class="display skill-name">Custom Plan</h3>
+          <p>We build your day around your current level and exactly which skills you want to unlock next.</p>
+        </div>
+        <div class="skill-item">
+          <h3 class="display skill-name">Live Feedback</h3>
+          <p>Coaches ride with you and give real-time cues — not after-the-fact debriefs.</p>
+        </div>
+        <div class="skill-item">
+          <h3 class="display skill-name">All Levels</h3>
+          <p>First-timers to experienced racers. Techniques to take your riding to the next level.</p>
         </div>
       </div>
     </div>
   </section>
+
+  <!-- Photo break -->
+  <section class="photo-break">
+    <img src="/images/2017/01/Singletrack-Motorcycle-Clinic-5.jpg" alt="Singletrack training session" class="photo-break-img" />
+  </section>
+
+  <!-- Final CTA -->
+  <section class="final-cta">
+    <div class="final-cta-bg"></div>
+    <div class="wrap final-cta-body">
+      <p class="section-label final-label">Book Training</p>
+      <h2 class="display final-title">Ready to<br>level up?</h2>
+      <a href="tel:5092810156" class="final-phone">509 · 281 · 0156</a>
+      <p class="final-note">Call Doug to discuss skill level, goals, and dates.</p>
+      <a href="/contact/" class="btn-outline-light btn-big">Or Send a Message</a>
+    </div>
+  </section>
+
 </Layout>
 
 <style>
-  .page-hero { background: var(--ink); color: var(--cream); padding: 72px 0 80px; }
-  .page-title { font-size: clamp(42px, 7vw, 88px); color: var(--cream); margin-bottom: 20px; }
-  .page-sub { font-size: 22px; max-width: 600px; opacity: 0.85; }
-
-  .training-detail { padding: 80px 0; }
-  .training-grid { display: grid; grid-template-columns: 3fr 2fr; gap: 64px; align-items: start; }
-  .section-title { font-size: clamp(32px, 4vw, 52px); color: var(--leather); margin-bottom: 24px; }
-  .training-content p { margin-bottom: 16px; }
-  .training-features { list-style: none; margin-top: 24px; display: flex; flex-direction: column; gap: 10px; }
-  .training-features li::before { content: '✓ '; color: var(--rust); font-weight: 700; }
-
-  .cost-box { border: 2px solid var(--rust); padding: 32px; margin-bottom: 32px; }
-  .cost-label { font-size: 14px; text-transform: uppercase; letter-spacing: 0.15em; font-weight: 700; color: var(--rust); margin-bottom: 8px; }
-  .cost-amount { font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: 72px; color: var(--rust); line-height: 1; }
-  .cost-unit { font-size: 14px; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 700; margin-bottom: 16px; }
-  .cost-box a { color: var(--rust); font-weight: 700; }
-  .training-cta { display: flex; flex-direction: column; }
-
-  @media (max-width: 768px) {
-    .training-grid { grid-template-columns: 1fr; gap: 40px; }
+  /* ── Hero ─────────────────────────────────────────── */
+  .hero {
+    position: relative;
+    min-height: 88vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    color: var(--cream);
   }
+  .hero-bg { position: absolute; inset: 0; z-index: 0; }
+  .hero-img { width: 100%; height: 100%; object-fit: cover; object-position: center 40%; }
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      105deg,
+      color-mix(in srgb, var(--ink) 85%, transparent) 0%,
+      color-mix(in srgb, var(--ink) 55%, transparent) 55%,
+      color-mix(in srgb, var(--ink) 20%, transparent) 100%
+    );
+  }
+  .hero-body {
+    position: relative;
+    z-index: 1;
+    padding: 80px 24px;
+    max-width: 680px;
+  }
+  .hero-title {
+    font-size: clamp(64px, 10vw, 120px);
+    line-height: 0.95;
+    margin: 16px 0 24px;
+    color: var(--cream);
+  }
+  .hero-sub {
+    font-size: 20px;
+    line-height: 1.5;
+    max-width: 520px;
+    opacity: 0.88;
+    margin-bottom: 40px;
+  }
+  .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+
+  /* ── Cost strip ───────────────────────────────────── */
+  .cost-strip {
+    background: var(--rust);
+    color: var(--cream);
+    padding: 56px 0;
+  }
+  .cost-inner {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 48px;
+    align-items: center;
+  }
+  .cost-main { display: flex; flex-direction: column; white-space: nowrap; }
+  .cost-num {
+    font-family: 'Big Shoulders Display', sans-serif;
+    font-weight: 900;
+    font-size: clamp(72px, 10vw, 112px);
+    line-height: 1;
+  }
+  .cost-label {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-weight: 700;
+    opacity: 0.85;
+    line-height: 1.5;
+    margin-top: 4px;
+  }
+  .cost-detail p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 16px;
+  }
+  .cost-detail a { color: var(--cream); font-weight: 700; }
+  .cost-includes {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .cost-includes li {
+    font-size: 15px;
+    padding-left: 20px;
+    position: relative;
+  }
+  .cost-includes li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    font-weight: 700;
+    color: color-mix(in srgb, var(--cream) 70%, transparent);
+  }
+  @media (max-width: 640px) {
+    .cost-inner { grid-template-columns: 1fr; gap: 24px; }
+  }
+
+  /* ── Skills ───────────────────────────────────────── */
+  .skills { padding: 100px 0; }
+  .skills-title {
+    font-size: clamp(40px, 6vw, 80px);
+    margin-bottom: 64px;
+  }
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    border-top: 1px solid var(--line);
+    border-left: 1px solid var(--line);
+  }
+  .skill-item {
+    padding: 40px 36px;
+    border-right: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+  .skill-name {
+    font-size: clamp(22px, 2.5vw, 32px);
+    color: var(--leather);
+    margin-bottom: 12px;
+  }
+  .skill-item p { font-size: 16px; line-height: 1.6; color: var(--ink-2); }
+  @media (max-width: 900px) {
+    .skills-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 600px) {
+    .skills-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ── Photo break ──────────────────────────────────── */
+  .photo-break { height: 60vh; overflow: hidden; }
+  .photo-break-img { width: 100%; height: 100%; object-fit: cover; object-position: center 30%; }
+
+  /* ── Final CTA ────────────────────────────────────── */
+  .final-cta {
+    background: var(--ink);
+    color: var(--cream);
+    padding: 100px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .final-cta-bg {
+    position: absolute;
+    inset: 0;
+    background: url('/images/tire-tread.png') repeat center / 320px auto;
+    opacity: 0.05;
+    pointer-events: none;
+  }
+  .final-cta-body { position: relative; z-index: 1; }
+  .final-label { color: color-mix(in srgb, var(--cream) 60%, transparent); }
+  .final-title {
+    font-size: clamp(48px, 8vw, 96px);
+    color: var(--cream);
+    margin: 16px 0 40px;
+    line-height: 0.95;
+  }
+  .final-phone {
+    display: block;
+    font-family: 'Big Shoulders Display', sans-serif;
+    font-weight: 900;
+    font-size: clamp(48px, 9vw, 112px);
+    color: var(--rust);
+    text-decoration: none;
+    line-height: 1;
+    margin-bottom: 24px;
+    letter-spacing: -0.02em;
+  }
+  .final-phone:hover { color: var(--cream); }
+  .final-note { font-size: 18px; opacity: 0.7; margin-bottom: 40px; }
 </style>

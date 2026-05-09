@@ -3,76 +3,246 @@ import Layout from '../../layouts/Layout.astro';
 
 const locations = [
   {
-    name: 'Hood River, Oregon',
-    slug: null,
-    description: 'Rising to the north of the Columbia River is Mt. Adams and to the south Mt. Hood. Under the cover of lush pine forests some of the best motorcycle singletrack trails in the world wind their way up through the mountains.',
+    name: 'Hood River',
+    state: 'Oregon',
+    slug: '/hood-river/',
+    image: '/images/2017/02/motorcycle-rental-1.jpg',
+    tag: 'Home Base',
+    blurb: "There's a reason OMR is based here. Single track that rivals anything in the world — snowboard in the morning, dirt-bike in the afternoon.",
   },
   {
     name: 'Coastal Oregon',
+    state: 'Oregon',
     slug: '/coastal-oregon/',
-    description: 'Dramatic coastal terrain with a mix of forest singletrack and open riding. Available seasonally.',
+    image: '/images/2017/05/Dirt-Bike-Rental-1.jpg',
+    tag: 'Year-Round',
+    blurb: 'Beginner to black diamond loops, dust-free almost any time of year. One of the largest OHV areas in the country.',
   },
   {
     name: 'Washington State',
+    state: 'Washington',
     slug: '/washington-state/',
-    description: 'Cross the Columbia River for incredible riding in southern Washington. Some of the most scenic trails in the Pacific Northwest.',
+    image: '/images/2017/02/motorcycle-rental-2.jpg',
+    tag: 'Advanced',
+    blurb: '20 to 70-mile loops of epic single track. Remote and challenging — open July through October.',
   },
   {
     name: 'Arizona',
+    state: 'Arizona',
     slug: '/arizona/',
-    description: 'Year-round desert riding near Phoenix. Our Arizona location is open winter and spring.',
+    image: '/images/2016/12/Arizona-Off-Road-Motorcycle-Training-1.jpg',
+    tag: 'Winter Riding',
+    blurb: 'Year-round desert riding near Phoenix. On the trail in an hour from the airport. Sandy washes and miles of single track.',
   },
 ];
 ---
+
 <Layout
   title="Motorcycle Rental - Off Road Adventure | Oregon Motorcycle Rental"
   description="Check out our off-road motorcycle enduro tour locations. Bring your posse or set up private one-on-one time with one of our expert guides."
 >
-  <section class="page-hero">
-    <div class="wrap">
-      <p class="section-label">Tour Locations</p>
-      <h1 class="display page-title">Riding Locations</h1>
-      <p class="page-sub">Whether you're zigzagging through the trees or flying across a mountain meadow your heart will pound.</p>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-bg">
+      <img src="/images/2020/05/Oregon-Motorcycle-Rental-KTM-300-XC-W-TPI-2019-Field.jpg" alt="" class="hero-img" />
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="hero-body wrap">
+      <p class="eyebrow">Tour Locations</p>
+      <h1 class="display hero-title">Riding<br>Locations.</h1>
+      <p class="hero-sub">Whether you're zigzagging through the trees or flying across a mountain meadow — your heart will pound. We offer exciting rides year-round from four locations.</p>
+      <a href="/contact/" class="btn btn-big">Book Your Ride</a>
     </div>
   </section>
 
+  <!-- Locations -->
   <section class="locations">
-    <div class="wrap">
-      <p class="intro">We offer exciting rides year-round from our Hood River, Oregon and Arizona locations.</p>
-      <div class="locations-grid">
-        {locations.map(loc => (
-          <div class="location-card">
-            <h2 class="display location-name">{loc.name}</h2>
-            <p>{loc.description}</p>
-            {loc.slug && <a href={loc.slug} class="btn btn-outline location-link">Explore {loc.name}</a>}
+    {locations.map((loc, i) => (
+      <div class={`loc-card ${i % 2 === 1 ? 'loc-card--flip' : ''}`}>
+        <div class="loc-img-wrap">
+          <img src={loc.image} alt={`${loc.name} riding`} class="loc-img" loading="lazy" />
+          <span class="loc-tag">{loc.tag}</span>
+        </div>
+        <div class="loc-body">
+          <div>
+            <p class="loc-state">{loc.state}</p>
+            <h2 class="display loc-name">{loc.name}</h2>
+            <p class="loc-blurb">{loc.blurb}</p>
           </div>
-        ))}
+          <a href={loc.slug} class="btn">Explore {loc.name}</a>
+        </div>
       </div>
+    ))}
+  </section>
+
+  <!-- Final CTA -->
+  <section class="final-cta">
+    <div class="final-cta-bg"></div>
+    <div class="wrap final-cta-body">
+      <p class="section-label final-label">Plan Your Trip</p>
+      <h2 class="display final-title">Bring your posse<br>or ride solo.</h2>
+      <a href="tel:5092810156" class="final-phone">509 · 281 · 0156</a>
+      <p class="final-note">Call Doug to discuss locations, skill level, and dates.</p>
+      <a href="/contact/" class="btn-outline-light btn-big">Or Send a Message</a>
     </div>
   </section>
 
-  <section class="cta-band">
-    <div class="wrap">
-      <p class="section-label">Book Your Ride</p>
-      <h2 class="display section-title">Bring your posse or ride solo</h2>
-      <p>Set up private one-on-one time or come with a group of 2–4. Call Doug at <a href="tel:5092810156" class="phone-link">509-281-0156</a> to plan your trip.</p>
-      <a href="/contact/" class="btn btn-big" style="margin-top:24px">Contact Us</a>
-    </div>
-  </section>
 </Layout>
 
 <style>
-  .page-hero { background: var(--ink); color: var(--cream); padding: 72px 0 80px; }
-  .page-title { font-size: clamp(48px, 8vw, 96px); color: var(--cream); margin-bottom: 20px; }
-  .page-sub { font-size: 22px; max-width: 620px; opacity: 0.85; }
+  /* ── Hero ─────────────────────────────────────────── */
+  .hero {
+    position: relative;
+    min-height: 88vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    color: var(--cream);
+  }
+  .hero-bg { position: absolute; inset: 0; z-index: 0; }
+  .hero-img { width: 100%; height: 100%; object-fit: cover; object-position: center 35%; }
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      105deg,
+      color-mix(in srgb, var(--ink) 82%, transparent) 0%,
+      color-mix(in srgb, var(--ink) 55%, transparent) 55%,
+      color-mix(in srgb, var(--ink) 20%, transparent) 100%
+    );
+  }
+  .hero-body {
+    position: relative;
+    z-index: 1;
+    padding: 80px 24px;
+    max-width: 680px;
+  }
+  .hero-title {
+    font-size: clamp(64px, 10vw, 120px);
+    line-height: 0.95;
+    margin: 16px 0 24px;
+    color: var(--cream);
+  }
+  .hero-sub {
+    font-size: 20px;
+    line-height: 1.5;
+    max-width: 520px;
+    opacity: 0.88;
+    margin-bottom: 40px;
+  }
 
-  .locations { padding: 80px 0; }
-  .intro { font-size: 20px; margin-bottom: 48px; }
-  .locations-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; }
-  .location-card { border-top: 3px solid var(--rust); padding-top: 24px; display: flex; flex-direction: column; gap: 12px; }
-  .location-name { font-size: clamp(28px, 3vw, 44px); color: var(--leather); }
-  .location-link { align-self: flex-start; margin-top: 4px; }
+  /* ── Location cards ───────────────────────────────── */
+  .locations { padding: 0; }
+  .loc-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 540px;
+  }
+  .loc-card--flip { direction: rtl; }
+  .loc-card--flip > * { direction: ltr; }
 
-  .cta-band { background: var(--cream-deep); padding: 80px 0; }
-  .phone-link { color: var(--rust); font-weight: 700; text-decoration: none; }
+  .loc-img-wrap { position: relative; overflow: hidden; }
+  .loc-img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .loc-tag {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: var(--rust);
+    color: var(--cream);
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 5px 12px;
+  }
+
+  .loc-body {
+    padding: 64px 72px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-left: 4px solid var(--rust);
+    background: var(--cream-soft);
+  }
+  .loc-card--flip .loc-body {
+    border-left: none;
+    border-right: 4px solid var(--rust);
+  }
+  .loc-state {
+    font-size: 12px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--rust);
+    margin-bottom: 8px;
+  }
+  .loc-name {
+    font-size: clamp(36px, 4.5vw, 64px);
+    color: var(--leather);
+    margin-bottom: 24px;
+    line-height: 0.95;
+  }
+  .loc-blurb {
+    font-size: 18px;
+    line-height: 1.65;
+    color: var(--ink-2);
+    margin-bottom: 40px;
+  }
+
+  @media (max-width: 900px) {
+    .loc-card, .loc-card--flip {
+      grid-template-columns: 1fr;
+      direction: ltr;
+      min-height: auto;
+    }
+    .loc-img-wrap { aspect-ratio: 16 / 9; }
+    .loc-body {
+      padding: 40px 24px;
+      border-left: 4px solid var(--rust);
+      border-right: none;
+    }
+    .loc-card--flip .loc-body {
+      border-left: 4px solid var(--rust);
+      border-right: none;
+    }
+  }
+
+  /* ── Final CTA ────────────────────────────────────── */
+  .final-cta {
+    background: var(--ink);
+    color: var(--cream);
+    padding: 100px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .final-cta-bg {
+    position: absolute;
+    inset: 0;
+    background: url('/images/tire-tread.png') repeat center / 320px auto;
+    opacity: 0.05;
+    pointer-events: none;
+  }
+  .final-cta-body { position: relative; z-index: 1; }
+  .final-label { color: color-mix(in srgb, var(--cream) 60%, transparent); }
+  .final-title {
+    font-size: clamp(40px, 7vw, 88px);
+    color: var(--cream);
+    margin: 16px 0 40px;
+    line-height: 0.95;
+  }
+  .final-phone {
+    display: block;
+    font-family: 'Big Shoulders Display', sans-serif;
+    font-weight: 900;
+    font-size: clamp(48px, 9vw, 112px);
+    color: var(--rust);
+    text-decoration: none;
+    line-height: 1;
+    margin-bottom: 24px;
+    letter-spacing: -0.02em;
+  }
+  .final-phone:hover { color: var(--cream); }
+  .final-note { font-size: 18px; opacity: 0.7; margin-bottom: 40px; }
 </style>

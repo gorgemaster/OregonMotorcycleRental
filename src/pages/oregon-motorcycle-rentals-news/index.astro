@@ -1,0 +1,251 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const posts = [
+  {
+    title: 'Brain, Body and Bike',
+    slug: '#',
+    category: 'Motorcycle Training',
+    date: 'March 2024',
+    image: '/images/2017/01/Singletrack-Motorcycle-Clinic-3.jpg',
+    excerpt: 'The connection between mental focus, physical conditioning, and bike setup is the key to unlocking real trail performance. Here\'s what we\'ve learned after a decade on the trails.',
+    featured: true,
+  },
+  {
+    title: 'Last Longer on the Trail — Use PalmSavers',
+    slug: '#',
+    category: 'Motorcycle Equipment',
+    date: 'January 2024',
+    image: '/images/2017/05/Off-Road-Motorcycle-Training-6.jpg',
+    excerpt: 'Hand fatigue is the number one reason intermediate riders call it a day early. We tested PalmSavers grip inserts over an entire season. Here\'s our honest take.',
+    featured: false,
+  },
+  {
+    title: 'Yeatts Design Left Hand Rear Brake Solution',
+    slug: '#',
+    category: 'Motorcycle Equipment',
+    date: 'November 2023',
+    image: '/images/2017/06/2017-ktm-300.jpg',
+    excerpt: 'Running a left-hand rear brake isn\'t just for recovering flat-trackers. For technical singletrack, the ergonomics are genuinely better. We\'ve had this setup on our KTMs all season.',
+    featured: false,
+  },
+  {
+    title: 'Kenda Equilibrium Tire Review',
+    slug: '#',
+    category: 'Motorcycle Equipment',
+    date: 'October 2023',
+    image: '/images/2017/06/2017-husky-300.jpg',
+    excerpt: 'After 1,500 miles of PNW singletrack and Arizona desert, the Kenda Equilibrium has earned a permanent spot on our Husqvarnas. Full review and comparison to our previous tire.',
+    featured: false,
+  },
+  {
+    title: 'Husqvarna 2017 TX 300 — Season Review',
+    slug: '#',
+    category: 'Motorcycle Equipment',
+    date: 'September 2023',
+    image: '/images/2017/05/Dirt-Bike-Rental-3-e1530023188740.jpg',
+    excerpt: 'We put the TX 300 through its paces over a full Oregon season: coastal dunes, Gorge singletrack, and Washington backcountry. Here\'s our comprehensive take.',
+    featured: false,
+  },
+  {
+    title: 'Beginner Brake Technique — Getting It Right Early',
+    slug: '#',
+    category: 'Motorcycle Training',
+    date: 'August 2023',
+    image: '/images/2017/01/Singletrack-Motorcycle-Clinic-5.jpg',
+    excerpt: 'Brake technique is the single skill that separates riders who progress quickly from those who plateau. Here\'s the drill we run at the start of every beginner session.',
+    featured: false,
+  },
+  {
+    title: 'E-Bikes Are Awesome — And Here\'s Why That Matters for Off-Road',
+    slug: '#',
+    category: 'Uncategorized',
+    date: 'July 2023',
+    image: '/images/2017/02/motorcycle-rental-3-e1530023311382.jpg',
+    excerpt: 'Before you stop reading — hear us out. E-bikes aren\'t replacing our fleet. But the technology is changing how we think about rider fitness and training progressions.',
+    featured: false,
+  },
+  {
+    title: 'Rekluse Clutch on Rental KTMs — Why We Made the Switch',
+    slug: '#',
+    category: 'Mechanics Corner',
+    date: 'June 2023',
+    image: '/images/2018/07/Oregon-Motorcycle-Rental-2018-KTM-150-XC-W.jpg',
+    excerpt: 'Installing Rekluse auto-clutches across our entire fleet was the single biggest improvement to rider experience we\'ve made. Here\'s the data from two seasons with beginner clients.',
+    featured: false,
+  },
+];
+
+const categories = ['All', 'Motorcycle Equipment', 'Motorcycle Training', 'Mechanics Corner'];
+---
+
+<Layout
+  title="Motorcycle Rental - Dirt Bike Adventure | Oregon Motorcycle Rental"
+  description="Find the latest news on guided motorcycle adventures in Arizona and the Pacific Northwest, as well as up-to-date info on dirt bike classes, and rentals."
+>
+
+  <section class="hero">
+    <div class="hero-bg">
+      <img src="/images/2017/06/20170603_1322410.jpg" alt="" class="hero-img" />
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="hero-body wrap">
+      <p class="eyebrow">From the Trail</p>
+      <h1 class="display hero-title">Gear Talk<br>Blog.</h1>
+      <p class="hero-sub">Equipment reviews, riding technique, and trail dispatches from Oregon, Washington, and Arizona.</p>
+    </div>
+  </section>
+
+  <section class="blog-body">
+    <div class="wrap">
+
+      {/* Featured post */}
+      {posts.filter(p => p.featured).map(post => (
+        <article class="featured-post">
+          <div class="featured-img-wrap">
+            <img src={post.image} alt={post.title} class="featured-img" loading="lazy" />
+            <span class="post-cat">{post.category}</span>
+          </div>
+          <div class="featured-body">
+            <p class="post-date">{post.date}</p>
+            <h2 class="display featured-title">{post.title}</h2>
+            <p class="featured-excerpt">{post.excerpt}</p>
+            <a href={post.slug} class="btn">Read More</a>
+          </div>
+        </article>
+      ))}
+
+      {/* Post grid */}
+      <div class="posts-grid">
+        {posts.filter(p => !p.featured).map(post => (
+          <article class="post-card">
+            <a href={post.slug} class="post-img-link">
+              <img src={post.image} alt={post.title} class="post-img" loading="lazy" />
+              <span class="post-cat">{post.category}</span>
+            </a>
+            <div class="post-body">
+              <p class="post-date">{post.date}</p>
+              <h3 class="display post-title">{post.title}</h3>
+              <p class="post-excerpt">{post.excerpt}</p>
+              <a href={post.slug} class="post-link">Read more →</a>
+            </div>
+          </article>
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+  <section class="newsletter">
+    <div class="wrap newsletter-inner">
+      <div>
+        <p class="section-label">Stay Current</p>
+        <h2 class="display news-title">New rides.<br>New gear.</h2>
+        <p class="news-sub">We post gear reviews, trail updates, and riding tips throughout the season. Follow us to stay in the loop.</p>
+      </div>
+      <div class="news-links">
+        <a href="https://instagram.com/oregonmotorcyclerental" target="_blank" rel="noopener" class="btn btn-big">Instagram</a>
+        <a href="https://facebook.com/oregonmotorcyclerentals" target="_blank" rel="noopener" class="btn-outline btn-big">Facebook</a>
+        <a href="https://youtube.com/@oregonmotorcyclerental" target="_blank" rel="noopener" class="btn-outline btn-big">YouTube</a>
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  .hero {
+    position: relative;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    color: var(--cream);
+  }
+  .hero-bg { position: absolute; inset: 0; z-index: 0; }
+  .hero-img { width: 100%; height: 100%; object-fit: cover; object-position: center 45%; }
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(105deg,
+      color-mix(in srgb, var(--ink) 88%, transparent) 0%,
+      color-mix(in srgb, var(--ink) 55%, transparent) 55%,
+      color-mix(in srgb, var(--ink) 20%, transparent) 100%
+    );
+  }
+  .hero-body { position: relative; z-index: 1; padding: 80px 24px; max-width: 640px; }
+  .hero-title { font-size: clamp(64px, 10vw, 120px); line-height: 0.95; margin: 16px 0 24px; color: var(--cream); }
+  .hero-sub { font-size: 20px; line-height: 1.5; max-width: 480px; opacity: 0.88; }
+
+  .blog-body { padding: 100px 0; }
+
+  /* Featured post */
+  .featured-post {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 480px;
+    margin-bottom: 80px;
+    border: 2px solid var(--line);
+  }
+  .featured-img-wrap { position: relative; overflow: hidden; }
+  .featured-img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .post-cat {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: var(--rust);
+    color: var(--cream);
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    padding: 5px 12px;
+  }
+  .featured-body {
+    padding: 56px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 16px;
+  }
+  .post-date { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.16em; color: var(--rust); }
+  .featured-title { font-size: clamp(28px, 3.5vw, 48px); color: var(--leather); line-height: 1.0; }
+  .featured-excerpt { font-size: 17px; line-height: 1.7; color: var(--ink-2); }
+
+  /* Post grid */
+  .posts-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+  }
+  .post-card { display: flex; flex-direction: column; }
+  .post-img-link { position: relative; display: block; overflow: hidden; aspect-ratio: 16 / 10; }
+  .post-img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.3s ease; }
+  .post-img-link:hover .post-img { transform: scale(1.04); }
+  .post-img-link .post-cat { position: absolute; top: 14px; left: 14px; }
+
+  .post-body { padding: 28px 0; display: flex; flex-direction: column; flex: 1; }
+  .post-title {
+    font-size: clamp(20px, 2vw, 28px);
+    color: var(--leather);
+    margin: 10px 0 14px;
+    line-height: 1.05;
+  }
+  .post-excerpt { font-size: 15px; line-height: 1.65; color: var(--ink-2); flex: 1; }
+  .post-link { display: inline-block; margin-top: 20px; font-weight: 800; font-size: 14px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--rust); text-decoration: none; }
+  .post-link:hover { color: var(--leather); }
+
+  @media (max-width: 1024px) { .posts-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 768px) {
+    .featured-post { grid-template-columns: 1fr; min-height: auto; }
+    .featured-img-wrap { aspect-ratio: 16 / 9; }
+    .featured-body { padding: 32px 24px; }
+    .posts-grid { grid-template-columns: 1fr; }
+  }
+
+  .newsletter { padding: 100px 0; background: var(--leather); color: var(--cream); }
+  .newsletter-inner { display: flex; align-items: center; justify-content: space-between; gap: 48px; flex-wrap: wrap; }
+  .news-title { font-size: clamp(40px, 5vw, 72px); color: var(--cream); margin: 12px 0 20px; }
+  .news-sub { font-size: 17px; max-width: 420px; line-height: 1.65; opacity: 0.85; }
+  .news-links { display: flex; flex-direction: column; gap: 12px; flex-shrink: 0; min-width: 200px; }
+</style>

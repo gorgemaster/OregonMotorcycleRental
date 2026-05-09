@@ -1,0 +1,336 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const reviews = [
+  {
+    quote: "Best day on a dirt bike I've ever had. Doug has local knowledge that would take years to build on your own — trails that don't show up on any map. The Rekluse clutch on the KTM made it approachable even after a long break from riding.",
+    name: "Mike S.",
+    location: "Portland, OR",
+    source: "Google",
+    stars: 5,
+    size: 'large',
+  },
+  {
+    quote: "I booked this as a birthday surprise for my husband and it was an absolute home run. Immaculate bikes, patient instruction, and Doug's enthusiasm is contagious. We'll be back every year.",
+    name: "Sarah T.",
+    location: "Seattle, WA",
+    source: "TripAdvisor",
+    stars: 5,
+    size: 'medium',
+  },
+  {
+    quote: "Rode with Doug in Arizona in January. Perfect escape from the Northwest winter. Desert terrain is unlike anything in the PNW — super fun, way easier on the body than I expected.",
+    name: "Chris B.",
+    location: "Hood River, OR",
+    source: "Google",
+    stars: 5,
+    size: 'medium',
+  },
+  {
+    quote: "The no-stall Rekluse clutch is a game changer if you haven't ridden in a while. I stalled constantly on my last rental somewhere else. Zero stalls all day here. Doug pre-rides the route and knows exactly what to expect.",
+    name: "James R.",
+    location: "Bend, OR",
+    source: "Yelp",
+    stars: 5,
+    size: 'large',
+  },
+  {
+    quote: "Coastal Oregon trails are absolutely incredible. All-day riding without seeing another group. Doug timed everything perfectly — we hit the best sections when light was filtering through the trees.",
+    name: "Tom & Linda K.",
+    location: "Eugene, OR",
+    source: "TripAdvisor",
+    stars: 5,
+    size: 'small',
+  },
+  {
+    quote: "Rode the Washington State loop — 40+ miles of backcountry singletrack. Remote, technical, utterly epic. Doug called out every technical section in advance. Felt safe the entire time despite the difficulty level.",
+    name: "Derek M.",
+    location: "Tacoma, WA",
+    source: "Google",
+    stars: 5,
+    size: 'small',
+  },
+  {
+    quote: "Took my 16-year-old son out on the KLX 140. Doug was incredibly patient with a teenager who'd only ridden on our property before. By lunch he was cleaning sections I couldn't believe. Best father-son day we've ever had.",
+    name: "Paul H.",
+    location: "Medford, OR",
+    source: "Facebook",
+    stars: 5,
+    size: 'large',
+  },
+  {
+    quote: "Three of us rode together as a corporate offsite. Doug customized the route so our different skill levels all got challenged without anyone getting in over their head. Honestly the best team activity I've seen in 15 years of corporate events.",
+    name: "Kenji W.",
+    location: "San Francisco, CA",
+    source: "Google",
+    stars: 5,
+    size: 'medium',
+  },
+  {
+    quote: "I've rented bikes in Moab, Sedona, and Baja. Oregon Motorcycle Rental is top tier — the preparation, the gear quality, the trail selection. Doug genuinely cares about your experience, not just getting a check.",
+    name: "Laura G.",
+    location: "Denver, CO",
+    source: "TripAdvisor",
+    stars: 5,
+    size: 'medium',
+  },
+  {
+    quote: "Showed up having never ridden off-road. Left wanting to sell my car and buy a dirt bike. The on-trail coaching completely changed how I see the sport.",
+    name: "Alex N.",
+    location: "Vancouver, BC",
+    source: "Google",
+    stars: 5,
+    size: 'small',
+  },
+  {
+    quote: "We've done this four years running now with the same group. Every time Doug finds trails we haven't ridden. The bikes are always fresh, gear is sorted, zero hassle. It's the benchmark we judge every other trip against.",
+    name: "The Ridgeline Crew",
+    location: "Boise, ID",
+    source: "Google",
+    stars: 5,
+    size: 'large',
+  },
+  {
+    quote: "Doug remembered our names and preferences from the prior year when we rebooked. That kind of attention to detail says everything about how he runs things.",
+    name: "Mark & Denise V.",
+    location: "Spokane, WA",
+    source: "Yelp",
+    stars: 5,
+    size: 'small',
+  },
+];
+---
+
+<Layout
+  title="Adventure Tour - Off Road Experience | Oregon Motorcycle Rental"
+  description="Our great clients are the reason we love what we do. We always appreciate getting feedback about our enthusiasm and the experience we provide."
+>
+
+  <section class="hero">
+    <div class="hero-bg">
+      <img src="/images/2017/02/motorcycle-rental-3-e1530023311382.jpg" alt="" class="hero-img" />
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="hero-body wrap">
+      <p class="eyebrow">What Riders Say</p>
+      <h1 class="display hero-title">Raves &amp;<br>Reviews.</h1>
+      <p class="hero-sub">100% 5-star rated. Every ride, every client, every season. Read what people say after a day on the trails with us.</p>
+    </div>
+  </section>
+
+  <section class="stats-strip">
+    <div class="wrap stats-inner">
+      <div class="stat">
+        <span class="stat-num">100%</span>
+        <span class="stat-label">5-Star Rated</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat">
+        <span class="stat-num">500+</span>
+        <span class="stat-label">Verified Reviews</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat">
+        <span class="stat-num">10+</span>
+        <span class="stat-label">Years of Rides</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat">
+        <span class="stat-num">4</span>
+        <span class="stat-label">Locations</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="reviews-body">
+    <div class="wrap">
+      <div class="reviews-grid">
+        {reviews.map(r => (
+          <article class={`review review--${r.size}`}>
+            <div class="review-stars">{'★'.repeat(r.stars)}</div>
+            <blockquote class="review-quote">&ldquo;{r.quote}&rdquo;</blockquote>
+            <footer class="review-footer">
+              <span class="review-name">{r.name}</span>
+              <span class="review-meta">{r.location} &middot; {r.source}</span>
+            </footer>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="leave-review">
+    <div class="wrap leave-inner">
+      <div>
+        <p class="section-label">Share Your Experience</p>
+        <h2 class="display leave-title">Rode with us?<br>Tell the world.</h2>
+        <p class="leave-sub">Your review helps other riders find unforgettable singletrack experiences. Takes 2 minutes and means the world to us.</p>
+      </div>
+      <div class="leave-buttons">
+        <a href="https://www.tripadvisor.com" target="_blank" rel="noopener" class="btn btn-big">TripAdvisor</a>
+        <a href="https://maps.google.com" target="_blank" rel="noopener" class="btn-outline btn-big">Google Reviews</a>
+        <a href="https://yelp.com" target="_blank" rel="noopener" class="btn-outline btn-big">Yelp</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="final-cta">
+    <div class="final-cta-bg"></div>
+    <div class="wrap final-cta-body">
+      <p class="section-label final-label">Book Your Ride</p>
+      <h2 class="display final-title">Join the<br>conversation.</h2>
+      <a href="tel:5092810156" class="final-phone">509 · 281 · 0156</a>
+      <p class="final-note">Call Doug to plan your ride.</p>
+      <a href="/contact/" class="btn-outline-light btn-big">Send a Message</a>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  .hero {
+    position: relative;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    color: var(--cream);
+  }
+  .hero-bg { position: absolute; inset: 0; z-index: 0; }
+  .hero-img { width: 100%; height: 100%; object-fit: cover; object-position: center 40%; }
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(105deg,
+      color-mix(in srgb, var(--ink) 88%, transparent) 0%,
+      color-mix(in srgb, var(--ink) 60%, transparent) 55%,
+      color-mix(in srgb, var(--ink) 25%, transparent) 100%
+    );
+  }
+  .hero-body { position: relative; z-index: 1; padding: 80px 24px; max-width: 680px; }
+  .hero-title {
+    font-size: clamp(64px, 10vw, 120px);
+    line-height: 0.95;
+    margin: 16px 0 24px;
+    color: var(--cream);
+  }
+  .hero-sub { font-size: 20px; line-height: 1.5; max-width: 520px; opacity: 0.88; }
+
+  .stats-strip { background: var(--rust); color: var(--cream); padding: 48px 0; }
+  .stats-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    flex-wrap: wrap;
+  }
+  .stat { text-align: center; padding: 16px 48px; }
+  .stat-num {
+    display: block;
+    font-family: 'Big Shoulders Display', sans-serif;
+    font-weight: 900;
+    font-size: clamp(48px, 6vw, 72px);
+    line-height: 1;
+  }
+  .stat-label {
+    display: block;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    opacity: 0.8;
+    margin-top: 6px;
+  }
+  .stat-divider {
+    width: 1px;
+    height: 64px;
+    background: color-mix(in srgb, var(--cream) 30%, transparent);
+  }
+  @media (max-width: 640px) {
+    .stat-divider { display: none; }
+    .stat { padding: 12px 24px; }
+  }
+
+  .reviews-body { padding: 100px 0; }
+  .reviews-grid {
+    columns: 3;
+    column-gap: 32px;
+  }
+  @media (max-width: 1024px) { .reviews-grid { columns: 2; } }
+  @media (max-width: 600px) { .reviews-grid { columns: 1; } }
+
+  .review {
+    break-inside: avoid;
+    margin-bottom: 32px;
+    padding: 36px;
+    background: var(--cream-deep);
+    border-top: 3px solid var(--rust);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .review--large { padding: 48px; }
+  .review--small { padding: 28px; }
+
+  .review-stars {
+    color: var(--rust);
+    font-size: 18px;
+    letter-spacing: 2px;
+  }
+  .review-quote {
+    font-size: 17px;
+    line-height: 1.65;
+    color: var(--ink-2);
+    font-style: italic;
+  }
+  .review--large .review-quote { font-size: 19px; }
+  .review--small .review-quote { font-size: 16px; }
+
+  .review-footer { display: flex; flex-direction: column; gap: 4px; margin-top: auto; }
+  .review-name {
+    font-family: 'Big Shoulders Display', sans-serif;
+    font-weight: 900;
+    font-size: 18px;
+    color: var(--leather);
+    text-transform: uppercase;
+  }
+  .review-meta { font-size: 13px; color: var(--leather-soft); font-weight: 600; letter-spacing: 0.04em; }
+
+  .leave-review { padding: 100px 0; background: var(--leather); color: var(--cream); }
+  .leave-inner { display: flex; align-items: center; justify-content: space-between; gap: 48px; flex-wrap: wrap; }
+  .leave-title { font-size: clamp(40px, 5vw, 72px); color: var(--cream); margin: 12px 0 20px; }
+  .leave-sub { font-size: 18px; max-width: 460px; line-height: 1.6; opacity: 0.85; }
+  .leave-buttons { display: flex; flex-direction: column; gap: 12px; flex-shrink: 0; min-width: 200px; }
+
+  .final-cta {
+    background: var(--ink);
+    color: var(--cream);
+    padding: 100px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .final-cta-bg {
+    position: absolute;
+    inset: 0;
+    background: url('/images/tire-tread.png') repeat center / 320px auto;
+    opacity: 0.05;
+    pointer-events: none;
+  }
+  .final-cta-body { position: relative; z-index: 1; }
+  .final-label { color: color-mix(in srgb, var(--cream) 60%, transparent); }
+  .final-title { font-size: clamp(48px, 8vw, 96px); color: var(--cream); margin: 16px 0 40px; line-height: 0.95; }
+  .final-phone {
+    display: block;
+    font-family: 'Big Shoulders Display', sans-serif;
+    font-weight: 900;
+    font-size: clamp(48px, 9vw, 112px);
+    color: var(--rust);
+    text-decoration: none;
+    line-height: 1;
+    margin-bottom: 24px;
+    letter-spacing: -0.02em;
+  }
+  .final-phone:hover { color: var(--cream); }
+  .final-note { font-size: 18px; opacity: 0.7; margin-bottom: 40px; }
+</style>

@@ -1,0 +1,157 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const photos = [
+  { src: '/images/2017/02/motorcycle-rental-1.jpg', alt: 'Singletrack trail riding in Hood River', caption: 'Hood River singletrack' },
+  { src: '/images/2017/05/Dirt-Bike-Rental-1.jpg', alt: 'Coastal Oregon dirt bike riding', caption: 'Coastal Oregon' },
+  { src: '/images/2017/02/motorcycle-rental-2.jpg', alt: 'Washington State trail riding', caption: 'Washington backcountry' },
+  { src: '/images/2017/12/Arizona-Motorcyle-Riders-Group.jpg', alt: 'Group ride in Arizona desert', caption: 'Arizona group ride' },
+  { src: '/images/2017/01/Singletrack-Motorcycle-Clinic-2.jpg', alt: 'Trail skills clinic', caption: 'On-trail coaching' },
+  { src: '/images/2017/12/Arizona-Motorcyle-Rider.jpg', alt: 'Desert single track rider', caption: 'Arizona desert' },
+  { src: '/images/2017/05/Dirt-Bike-Rental-2.jpg', alt: 'Dirt bike on coastal trail', caption: 'Coast Loop trails' },
+  { src: '/images/2017/01/Singletrack-Motorcycle-Clinic-4.jpg', alt: 'Motorcycle training session', caption: 'Skills session' },
+  { src: '/images/2017/12/Arizona-Motorcyle-Riders-Terrain.jpg', alt: 'Arizona terrain overview', caption: 'Wickenburg desert' },
+  { src: '/images/2017/02/motorcycle-rental-4.jpg', alt: 'Rider on Oregon singletrack', caption: 'Pacific Northwest trails' },
+  { src: '/images/2017/01/Singletrack-Motorcycle-Clinic-6.jpg', alt: 'Group motorcycle clinic', caption: 'Group skills day' },
+  { src: '/images/2017/05/Dirt-Bike-Rental-4.jpg', alt: 'Coastal Oregon riding', caption: 'Year-round coastal trails' },
+  { src: '/images/2017/01/Singletrack-Motorcycle-Clinic-1-e1530535918118.jpg', alt: 'Trail riding skills clinic', caption: 'Clinic day' },
+  { src: '/images/2017/05/Off-Road-Motorcycle-Training-5.jpg', alt: 'Off road training', caption: 'On-trail drills' },
+  { src: '/images/2017/06/20170602_124211.jpg', alt: 'Summer trail riding', caption: 'June in the Gorge' },
+  { src: '/images/2019/06/Oregon-Motorcycle-Rental-Washington-State-Riding-Location.jpg', alt: 'Washington state riding location', caption: 'Washington high country' },
+  { src: '/images/2017/01/Off-Road-Motorcyle-Training-AZ1.jpg', alt: 'Arizona off road training', caption: 'Desert riding skills' },
+  { src: '/images/2017/06/20170603_121736.jpg', alt: 'Riding in the Pacific Northwest', caption: 'PNW summer riding' },
+  { src: '/images/2018/06/IMAG0295.jpg', alt: 'Trail riding fun', caption: 'Out on the trail' },
+  { src: '/images/2020/05/Oregon-Motorcycle-Rental-KTM-300-XC-W-TPI-2019-Field.jpg', alt: 'KTM 300 XC-W TPI in the field', caption: '2019 KTM 300 XC-W TPI' },
+  { src: '/images/rider-forest.jpg', alt: 'Rider through forest singletrack', caption: 'Forest singletrack' },
+  { src: '/images/2017/01/Singletrack-Motorcycle-Clinic-7.jpg', alt: 'Singletrack skills session', caption: 'Skills progression' },
+  { src: '/images/2017/05/Off-Road-Motorcycle-Training-7.jpg', alt: 'Off road motorcycle training', caption: 'Training day' },
+  { src: '/images/2017/06/20170603_135437-e1530023262826.jpg', alt: 'Dirt bikes on summer trail', caption: 'Gorge singletrack' },
+];
+---
+
+<Layout
+  title="Motorcycle Rental - Motorcycle Experience | Oregon Motorcycle Rental"
+  description="Check out some of the fun we have been having on Enduro Motorcycles in the Northwest, Oregon and Washington as well as the desert of Arizona."
+>
+
+  <section class="hero">
+    <div class="hero-bg">
+      <img src="/images/rider-forest.jpg" alt="" class="hero-img" />
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="hero-body wrap">
+      <p class="eyebrow">The Experience</p>
+      <h1 class="display hero-title">Gallery.</h1>
+      <p class="hero-sub">Singletrack in Oregon, Washington, and Arizona. Real rides, real terrain, real smiles.</p>
+    </div>
+  </section>
+
+  <section class="gallery-body">
+    <div class="gallery-grid">
+      {photos.map(p => (
+        <figure class="photo">
+          <img src={p.src} alt={p.alt} loading="lazy" class="photo-img" />
+          <figcaption class="photo-caption">{p.caption}</figcaption>
+        </figure>
+      ))}
+    </div>
+  </section>
+
+  <section class="gallery-cta">
+    <div class="wrap cta-inner">
+      <div>
+        <p class="section-label">Follow Along</p>
+        <h2 class="display cta-title">Tag us on your next ride.</h2>
+        <p class="cta-hashtag">#oregonmotorcyclerental</p>
+        <ul class="social-list">
+          <li><a href="https://instagram.com/oregonmotorcyclerental" target="_blank" rel="noopener">Instagram @oregonmotorcyclerental</a></li>
+          <li><a href="https://youtube.com/@oregonmotorcyclerental" target="_blank" rel="noopener">YouTube @oregonmotorcyclerental</a></li>
+        </ul>
+      </div>
+      <a href="/contact/" class="btn btn-big">Book Your Ride</a>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  .hero {
+    position: relative;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    color: var(--cream);
+  }
+  .hero-bg { position: absolute; inset: 0; z-index: 0; }
+  .hero-img { width: 100%; height: 100%; object-fit: cover; object-position: center 35%; }
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(105deg,
+      color-mix(in srgb, var(--ink) 85%, transparent) 0%,
+      color-mix(in srgb, var(--ink) 50%, transparent) 50%,
+      color-mix(in srgb, var(--ink) 20%, transparent) 100%
+    );
+  }
+  .hero-body { position: relative; z-index: 1; padding: 80px 24px; max-width: 560px; }
+  .hero-title { font-size: clamp(80px, 13vw, 160px); line-height: 0.9; margin: 16px 0 24px; color: var(--cream); }
+  .hero-sub { font-size: 20px; line-height: 1.5; max-width: 480px; opacity: 0.88; }
+
+  .gallery-body { padding: 0; }
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 280px;
+    gap: 4px;
+  }
+  .gallery-grid .photo:nth-child(5n+1) { grid-column: span 2; grid-row: span 2; }
+  .gallery-grid .photo:nth-child(9n+4) { grid-column: span 2; }
+
+  .photo { position: relative; overflow: hidden; background: var(--leather); }
+  .photo-img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s ease; }
+  .photo:hover .photo-img { transform: scale(1.04); }
+  .photo-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 12px 16px;
+    background: linear-gradient(transparent, color-mix(in srgb, var(--ink) 80%, transparent));
+    color: var(--cream);
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  .photo:hover .photo-caption { opacity: 1; }
+
+  @media (max-width: 900px) {
+    .gallery-grid {
+      grid-template-columns: repeat(2, 1fr);
+      grid-auto-rows: 220px;
+    }
+    .gallery-grid .photo:nth-child(5n+1) { grid-column: span 2; grid-row: span 1; }
+    .gallery-grid .photo:nth-child(9n+4) { grid-column: span 1; }
+  }
+  @media (max-width: 500px) {
+    .gallery-grid { grid-template-columns: 1fr 1fr; grid-auto-rows: 160px; }
+  }
+
+  .gallery-cta { padding: 100px 0; background: var(--leather); color: var(--cream); }
+  .cta-inner { display: flex; align-items: center; justify-content: space-between; gap: 48px; flex-wrap: wrap; }
+  .cta-title { font-size: clamp(36px, 4.5vw, 64px); color: var(--cream); margin: 12px 0 20px; }
+  .cta-hashtag {
+    font-family: 'Big Shoulders Display', sans-serif;
+    font-weight: 900;
+    font-size: 28px;
+    color: var(--rust);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  .social-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+  .social-list a { color: var(--cream); opacity: 0.75; font-size: 15px; font-weight: 600; text-decoration: none; }
+  .social-list a:hover { opacity: 1; color: var(--rust); }
+</style>

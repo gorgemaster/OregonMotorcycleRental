@@ -1,0 +1,204 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const highlights = [
+  { label: 'Season', value: 'Year-Round' },
+  { label: 'Terrain', value: 'Forest singletrack & coastal dunes' },
+  { label: 'Difficulty', value: 'Beginner to Intermediate' },
+  { label: 'From Portland', value: '1.5 hours west on Hwy 6' },
+];
+
+const trails = [
+  {
+    name: 'Sand Lake OHV',
+    difficulty: 'All Levels',
+    acres: '1,000+ acres',
+    desc: 'One of the largest off-highway vehicle areas on the Oregon Coast — rolling sand dunes, beach access, and more terrain than you can cover in a weekend. Perfect for riders of all skill levels.',
+  },
+  {
+    name: 'Tillamook State Forest',
+    difficulty: 'Beginner–Intermediate',
+    acres: '364,000 acres',
+    desc: 'A vast managed forest with an extensive network of logging roads and natural singletrack. The famous "Coast Loop" links miles of rideable terrain through Sitka spruce and Douglas fir.',
+  },
+  {
+    name: 'Summit Trail Network',
+    difficulty: 'Intermediate',
+    acres: 'Connected loops',
+    desc: 'Technical forest singletrack in the hills between Portland and the coast. Dry and fast in summer, lush and tacky in fall and spring — the trails here ride completely differently across seasons.',
+  },
+];
+---
+
+<Layout
+  title="Motorcycle Rental - Motorcycle Adventure | Oregon Motorcycle Rental"
+  description="Oregon Coast dirt bike tours will take you on some of the best singletrack trails in the country, with endless trails for riders of all levels."
+>
+
+  <section class="hero">
+    <div class="hero-bg">
+      <img src="/images/2017/05/Dirt-Bike-Rental-1.jpg" alt="Coastal Oregon dirt bike riding" class="hero-img" />
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="hero-body wrap">
+      <p class="eyebrow">Oregon — Year-Round</p>
+      <h1 class="display hero-title">Coastal<br>Oregon.</h1>
+      <p class="hero-sub">Beginner to black diamond, dust-free almost any time of year. One of the largest OHV areas in the country — and barely anyone knows about it.</p>
+      <a href="/contact/" class="btn btn-big">Book Coastal Oregon</a>
+    </div>
+  </section>
+
+  <section class="highlights-strip">
+    <div class="wrap highlights-inner">
+      {highlights.map(h => (
+        <div class="highlight-item">
+          <span class="highlight-label">{h.label}</span>
+          <span class="highlight-value">{h.value}</span>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="location-intro">
+    <div class="wrap intro-grid">
+      <div class="intro-text">
+        <p class="section-label">The Coast</p>
+        <h2 class="display intro-title">Year-round riding. No dust. No crowds.</h2>
+        <p>The Oregon Coast delivers something rare: consistent trail conditions almost any month of the year. The coastal climate keeps things damp enough that dust is never an issue, but dry enough that trails stay rideable year-round.</p>
+        <p>Sand Lake OHV is the centerpiece — over a thousand acres of dunes, beach access, and terrain that can handle anything from a first-timer to a seasoned enduro racer. The Tillamook State Forest expands that with hundreds of miles of natural singletrack and logging roads.</p>
+        <p>The variety here is unmatched. One day you're carving through old-growth Sitka spruce. The next you're sliding sideways across a coastal dune with the Pacific in the background.</p>
+      </div>
+      <div class="intro-images">
+        <img src="/images/2017/05/Dirt-Bike-Rental-2.jpg" alt="Coastal trail riding" class="intro-img" loading="lazy" />
+        <img src="/images/2017/05/Dirt-Bike-Rental-4.jpg" alt="Coastal Oregon trails" class="intro-img" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <section class="trails-section">
+    <div class="wrap">
+      <p class="section-label">Riding Areas</p>
+      <h2 class="display trails-title">Where we ride.</h2>
+      <div class="trails-grid">
+        {trails.map(t => (
+          <div class="trail-card">
+            <h3 class="display trail-name">{t.name}</h3>
+            <div class="trail-meta">
+              <span class="trail-tag">{t.difficulty}</span>
+              <span class="trail-size">{t.acres}</span>
+            </div>
+            <p class="trail-desc">{t.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="why-coastal">
+    <div class="wrap why-inner">
+      <img src="/images/2017/05/Off-Road-Motorcycle-Training-7.jpg" alt="Riding on the Oregon Coast" class="why-img" loading="lazy" />
+      <div class="why-text">
+        <p class="section-label">Why the Coast</p>
+        <h2 class="display why-title">The PNW at its finest.</h2>
+        <p>Coastal Oregon gets overlooked in favor of Hood River or the backcountry — which is exactly why we love it. You won't share trails with a crowd. The terrain is varied, accessible, and genuinely fun at any skill level.</p>
+        <p>The proximity to Portland makes it an easy day trip: leave in the morning, ride all day, and still be home for dinner. Or stay the night in Tillamook or Pacific City and make a weekend of it.</p>
+        <p>We've ridden this area in January rain and August sun. It delivers every time.</p>
+        <a href="/contact/" class="btn btn-big" style="margin-top:32px;">Book Your Ride</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="final-cta">
+    <div class="final-cta-bg"></div>
+    <div class="wrap final-cta-body">
+      <p class="section-label final-label">Year-Round Riding</p>
+      <h2 class="display final-title">Coast is<br>always open.</h2>
+      <a href="tel:5092810156" class="final-phone">509 · 281 · 0156</a>
+      <p class="final-note">Call Doug to plan your coastal ride.</p>
+      <a href="/contact/" class="btn-outline-light btn-big">Send a Message</a>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  .hero {
+    position: relative;
+    min-height: 88vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    color: var(--cream);
+  }
+  .hero-bg { position: absolute; inset: 0; z-index: 0; }
+  .hero-img { width: 100%; height: 100%; object-fit: cover; object-position: center 40%; }
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(105deg,
+      color-mix(in srgb, var(--ink) 82%, transparent) 0%,
+      color-mix(in srgb, var(--ink) 55%, transparent) 55%,
+      color-mix(in srgb, var(--ink) 20%, transparent) 100%
+    );
+  }
+  .hero-body { position: relative; z-index: 1; padding: 80px 24px; max-width: 680px; }
+  .hero-title { font-size: clamp(72px, 12vw, 150px); line-height: 0.9; margin: 16px 0 24px; color: var(--cream); }
+  .hero-sub { font-size: 20px; line-height: 1.5; max-width: 520px; opacity: 0.88; margin-bottom: 40px; }
+
+  .highlights-strip { background: var(--rust); color: var(--cream); padding: 40px 0; }
+  .highlights-inner { display: flex; align-items: stretch; flex-wrap: wrap; }
+  .highlight-item {
+    flex: 1;
+    min-width: 160px;
+    padding: 20px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    border-right: 1px solid color-mix(in srgb, var(--cream) 25%, transparent);
+  }
+  .highlight-item:last-child { border-right: none; }
+  .highlight-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.18em; opacity: 0.7; }
+  .highlight-value { font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: 20px; line-height: 1.2; }
+
+  .location-intro { padding: 100px 0; }
+  .intro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+  .intro-title { font-size: clamp(32px, 4vw, 52px); color: var(--leather); margin: 12px 0 28px; }
+  .intro-text p { margin-bottom: 20px; font-size: 18px; line-height: 1.7; }
+  .intro-text p:last-child { margin-bottom: 0; }
+  .intro-images { display: grid; grid-template-rows: 1fr 1fr; gap: 8px; }
+  .intro-img { width: 100%; height: 220px; object-fit: cover; display: block; }
+
+  .trails-section { padding: 100px 0; background: var(--cream-deep); }
+  .trails-title { font-size: clamp(36px, 4.5vw, 60px); color: var(--leather); margin: 12px 0 56px; }
+  .trails-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+  .trail-card { padding: 40px; background: var(--cream-soft); border-top: 4px solid var(--rust); }
+  .trail-name { font-size: clamp(20px, 2.2vw, 28px); color: var(--leather); margin-bottom: 12px; }
+  .trail-meta { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; margin-bottom: 20px; }
+  .trail-tag { background: var(--rust); color: var(--cream); font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; padding: 4px 10px; }
+  .trail-size { font-size: 13px; font-weight: 700; color: var(--leather-soft); }
+  .trail-desc { font-size: 16px; line-height: 1.7; color: var(--ink-2); }
+
+  .why-coastal { padding: 100px 0; background: var(--leather); color: var(--cream); }
+  .why-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+  .why-img { width: 100%; height: 460px; object-fit: cover; display: block; }
+  .why-title { font-size: clamp(32px, 4vw, 52px); color: var(--cream); margin: 12px 0 24px; }
+  .why-text p { font-size: 17px; line-height: 1.7; margin-bottom: 16px; opacity: 0.88; }
+  .why-text p:last-child { margin-bottom: 0; }
+
+  .final-cta { background: var(--ink); color: var(--cream); padding: 100px 0; text-align: center; position: relative; overflow: hidden; }
+  .final-cta-bg { position: absolute; inset: 0; background: url('/images/tire-tread.png') repeat center / 320px auto; opacity: 0.05; pointer-events: none; }
+  .final-cta-body { position: relative; z-index: 1; }
+  .final-label { color: color-mix(in srgb, var(--cream) 60%, transparent); }
+  .final-title { font-size: clamp(48px, 8vw, 96px); color: var(--cream); margin: 16px 0 40px; line-height: 0.95; }
+  .final-phone { display: block; font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: clamp(48px, 9vw, 112px); color: var(--rust); text-decoration: none; line-height: 1; margin-bottom: 24px; letter-spacing: -0.02em; }
+  .final-phone:hover { color: var(--cream); }
+  .final-note { font-size: 18px; opacity: 0.7; margin-bottom: 40px; }
+
+  @media (max-width: 900px) {
+    .intro-grid, .why-inner { grid-template-columns: 1fr; gap: 48px; }
+    .trails-grid { grid-template-columns: 1fr; }
+    .intro-images { grid-template-rows: auto; grid-template-columns: 1fr 1fr; }
+    .intro-img { height: 180px; }
+    .why-img { height: 300px; }
+  }
+</style>

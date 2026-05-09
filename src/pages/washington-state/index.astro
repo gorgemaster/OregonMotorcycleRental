@@ -1,0 +1,247 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const highlights = [
+  { label: 'Season', value: 'July – October' },
+  { label: 'Terrain', value: 'Remote backcountry, high alpine singletrack' },
+  { label: 'Difficulty', value: 'Advanced' },
+  { label: 'Loop Length', value: '20 to 70+ miles' },
+];
+
+const trails = [
+  {
+    name: 'Riffe Lake Area',
+    difficulty: 'Advanced',
+    season: 'Aug – Oct',
+    desc: 'Remote, challenging loops through the foothills south of Mt. Rainier. Long miles, minimal traffic, and terrain that rewards technical skill and fitness. Not for the faint of heart.',
+  },
+  {
+    name: 'North Cascades Loops',
+    difficulty: 'Expert',
+    season: 'July – Sept',
+    desc: 'High alpine riding above 4,000 feet with views that stop you in your tracks. Technical terrain, rocky switchbacks, and the kind of remoteness that makes you feel like the only person on Earth.',
+  },
+  {
+    name: 'Gifford Pinchot National Forest',
+    difficulty: 'Intermediate–Advanced',
+    season: 'June – Oct',
+    desc: 'Vast forest terrain south of Mt. Adams. Mix of fire roads and natural singletrack, with enough mileage to fill a long weekend of riding. Big trees, volcanic soil, and minimal crowds.',
+  },
+];
+---
+
+<Layout
+  title="Motorcycle Rental - Off Road Experience | Oregon Motorcycle Rental"
+  description="Check out our KTM's and the new Husqvarna's for your dirtbike tour of Washington. Explore the remote and challenging trails of Washington State."
+>
+
+  <section class="hero">
+    <div class="hero-bg">
+      <img src="/images/2019/06/Oregon-Motorcycle-Rental-Washington-State-Riding-Location.jpg" alt="Washington State backcountry riding" class="hero-img" />
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="hero-body wrap">
+      <p class="eyebrow">Washington — Advanced</p>
+      <h1 class="display hero-title">Washington<br>State.</h1>
+      <p class="hero-sub">Remote. Challenging. Open July through October. Epic loops of 20 to 70+ miles of backcountry singletrack you won't find on any public map.</p>
+      <a href="/contact/" class="btn btn-big">Book Washington</a>
+    </div>
+  </section>
+
+  <section class="highlights-strip">
+    <div class="wrap highlights-inner">
+      {highlights.map(h => (
+        <div class="highlight-item">
+          <span class="highlight-label">{h.label}</span>
+          <span class="highlight-value">{h.value}</span>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="location-intro">
+    <div class="wrap intro-grid">
+      <div class="intro-images">
+        <img src="/images/2017/02/motorcycle-rental-2.jpg" alt="Washington State trail" class="intro-img intro-img--main" loading="lazy" />
+        <img src="/images/2017/06/20170603_135437-e1530023262826.jpg" alt="Trail riding in Washington" class="intro-img intro-img--secondary" loading="lazy" />
+      </div>
+      <div class="intro-text">
+        <p class="section-label">The Far North</p>
+        <h2 class="display intro-title">This is advanced territory.</h2>
+        <p>Washington State is our most challenging riding destination — and our most rewarding. The terrain here is remote, the loops are long, and the payoff is an experience you simply can't find anywhere else in the Pacific Northwest.</p>
+        <p>We run loops of 20 to 70+ miles through Cascades foothills and high alpine country that opens briefly each summer. Snow closes most of this territory by November and doesn't clear until late June — which is part of why it feels so untouched.</p>
+        <p>We recommend this location for intermediate to advanced riders who are comfortable on technical terrain and have stamina for longer days in the saddle. If that's you, this is the best riding we offer.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="level-callout">
+    <div class="wrap callout-inner">
+      <div class="callout-icon">!</div>
+      <div>
+        <h3 class="display callout-title">Skill Level Notice</h3>
+        <p>Washington State loops are recommended for riders with at least intermediate off-road experience. If you're newer to singletrack riding, we suggest starting with Hood River or Coastal Oregon first. Doug will help you assess honestly — no shame in building up to it.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="trails-section">
+    <div class="wrap">
+      <p class="section-label">Riding Areas</p>
+      <h2 class="display trails-title">Where we ride.</h2>
+      <div class="trails-grid">
+        {trails.map(t => (
+          <div class="trail-card">
+            <h3 class="display trail-name">{t.name}</h3>
+            <div class="trail-meta">
+              <span class="trail-tag">{t.difficulty}</span>
+              <span class="trail-season">{t.season}</span>
+            </div>
+            <p class="trail-desc">{t.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="logistics">
+    <div class="wrap logistics-grid">
+      <div>
+        <p class="section-label">Planning Your Trip</p>
+        <h2 class="display logistics-title">Logistics matter here.</h2>
+        <p>Washington State rides require more planning than our Oregon locations. We coordinate staging, route conditions, and weather windows carefully — especially for the higher elevation loops. Doug handles all of this on your behalf.</p>
+        <p>We typically stage from the Hood River area and travel to Washington State together. Plan for an early start — longer days mean more ground covered and more time to explore before heading back.</p>
+      </div>
+      <div class="logistics-details">
+        <div class="detail-item">
+          <span class="detail-label">Meet Point</span>
+          <span class="detail-value">Hood River, Oregon (transportation included)</span>
+        </div>
+        <div class="detail-item">
+          <span class="detail-label">Ride Duration</span>
+          <span class="detail-value">Full day — typically 6 to 8 hours on trail</span>
+        </div>
+        <div class="detail-item">
+          <span class="detail-label">Group Size</span>
+          <span class="detail-value">1 to 6 riders per guide</span>
+        </div>
+        <div class="detail-item">
+          <span class="detail-label">Availability</span>
+          <span class="detail-value">July through October only</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="final-cta">
+    <div class="final-cta-bg"></div>
+    <div class="wrap final-cta-body">
+      <p class="section-label final-label">Advanced Riding</p>
+      <h2 class="display final-title">Ready for the<br>real backcountry?</h2>
+      <a href="tel:5092810156" class="final-phone">509 · 281 · 0156</a>
+      <p class="final-note">Call Doug to discuss skill level and route options.</p>
+      <a href="/contact/" class="btn-outline-light btn-big">Send a Message</a>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  .hero {
+    position: relative;
+    min-height: 88vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    color: var(--cream);
+  }
+  .hero-bg { position: absolute; inset: 0; z-index: 0; }
+  .hero-img { width: 100%; height: 100%; object-fit: cover; object-position: center 35%; }
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(105deg,
+      color-mix(in srgb, var(--ink) 82%, transparent) 0%,
+      color-mix(in srgb, var(--ink) 55%, transparent) 55%,
+      color-mix(in srgb, var(--ink) 20%, transparent) 100%
+    );
+  }
+  .hero-body { position: relative; z-index: 1; padding: 80px 24px; max-width: 680px; }
+  .hero-title { font-size: clamp(60px, 10vw, 120px); line-height: 0.9; margin: 16px 0 24px; color: var(--cream); }
+  .hero-sub { font-size: 20px; line-height: 1.5; max-width: 520px; opacity: 0.88; margin-bottom: 40px; }
+
+  .highlights-strip { background: var(--rust); color: var(--cream); padding: 40px 0; }
+  .highlights-inner { display: flex; align-items: stretch; flex-wrap: wrap; }
+  .highlight-item {
+    flex: 1;
+    min-width: 160px;
+    padding: 20px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    border-right: 1px solid color-mix(in srgb, var(--cream) 25%, transparent);
+  }
+  .highlight-item:last-child { border-right: none; }
+  .highlight-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.18em; opacity: 0.7; }
+  .highlight-value { font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: 20px; line-height: 1.2; }
+
+  .location-intro { padding: 100px 0; }
+  .intro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+  .intro-images { display: grid; grid-template-rows: 1fr auto; gap: 8px; }
+  .intro-img--main { width: 100%; height: 360px; object-fit: cover; display: block; }
+  .intro-img--secondary { width: 100%; height: 200px; object-fit: cover; display: block; }
+  .intro-title { font-size: clamp(32px, 4vw, 52px); color: var(--leather); margin: 12px 0 28px; }
+  .intro-text p { margin-bottom: 20px; font-size: 18px; line-height: 1.7; }
+  .intro-text p:last-child { margin-bottom: 0; }
+
+  .level-callout { padding: 48px 0; background: var(--ink); color: var(--cream); }
+  .callout-inner { display: flex; gap: 32px; align-items: flex-start; }
+  .callout-icon {
+    font-family: 'Big Shoulders Display', sans-serif;
+    font-weight: 900;
+    font-size: 48px;
+    color: var(--rust);
+    flex-shrink: 0;
+    line-height: 1;
+    width: 48px;
+    text-align: center;
+  }
+  .callout-title { font-size: 24px; color: var(--cream); margin-bottom: 12px; }
+  .callout-inner p { font-size: 17px; line-height: 1.7; opacity: 0.85; }
+
+  .trails-section { padding: 100px 0; background: var(--cream-deep); }
+  .trails-title { font-size: clamp(36px, 4.5vw, 60px); color: var(--leather); margin: 12px 0 56px; }
+  .trails-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+  .trail-card { padding: 40px; background: var(--cream-soft); border-top: 4px solid var(--rust); }
+  .trail-name { font-size: clamp(18px, 2vw, 26px); color: var(--leather); margin-bottom: 12px; }
+  .trail-meta { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; margin-bottom: 20px; }
+  .trail-tag { background: var(--rust); color: var(--cream); font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; padding: 4px 10px; }
+  .trail-season { font-size: 13px; font-weight: 700; color: var(--leather-soft); }
+  .trail-desc { font-size: 16px; line-height: 1.7; color: var(--ink-2); }
+
+  .logistics { padding: 100px 0; }
+  .logistics-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+  .logistics-title { font-size: clamp(32px, 4vw, 52px); color: var(--leather); margin: 12px 0 24px; }
+  .logistics > .wrap > div:first-child p { font-size: 17px; line-height: 1.7; margin-bottom: 16px; }
+  .logistics-details { display: flex; flex-direction: column; gap: 0; border: 2px solid var(--line); }
+  .detail-item { padding: 24px 28px; border-bottom: 1px solid var(--line); display: flex; flex-direction: column; gap: 6px; }
+  .detail-item:last-child { border-bottom: none; }
+  .detail-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.18em; color: var(--rust); }
+  .detail-value { font-size: 16px; font-weight: 600; color: var(--leather); }
+
+  .final-cta { background: var(--ink); color: var(--cream); padding: 100px 0; text-align: center; position: relative; overflow: hidden; }
+  .final-cta-bg { position: absolute; inset: 0; background: url('/images/tire-tread.png') repeat center / 320px auto; opacity: 0.05; pointer-events: none; }
+  .final-cta-body { position: relative; z-index: 1; }
+  .final-label { color: color-mix(in srgb, var(--cream) 60%, transparent); }
+  .final-title { font-size: clamp(48px, 8vw, 96px); color: var(--cream); margin: 16px 0 40px; line-height: 0.95; }
+  .final-phone { display: block; font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: clamp(48px, 9vw, 112px); color: var(--rust); text-decoration: none; line-height: 1; margin-bottom: 24px; letter-spacing: -0.02em; }
+  .final-phone:hover { color: var(--cream); }
+  .final-note { font-size: 18px; opacity: 0.7; margin-bottom: 40px; }
+
+  @media (max-width: 900px) {
+    .intro-grid, .logistics-grid { grid-template-columns: 1fr; gap: 48px; }
+    .trails-grid { grid-template-columns: 1fr; }
+    .intro-img--main { height: 280px; }
+    .intro-img--secondary { height: 180px; }
+  }
+</style>

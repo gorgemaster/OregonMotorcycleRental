@@ -1,0 +1,235 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const features = [
+  {
+    publication: 'Dirt Bike Magazine',
+    logo: '/images/2016/10/Dirt-Bike-Mag.jpg',
+    headline: 'Oregon\'s Best-Kept Trail Secret',
+    date: 'October 2016',
+    excerpt: 'Dirt Bike Magazine featured Oregon Motorcycle Rental as one of the premier guided enduro experiences in the Pacific Northwest — singling out the fleet quality, trail access, and Doug\'s encyclopedic knowledge of local singletrack.',
+    image: '/images/2016/11/GT-216-Enduro-front.jpg',
+    featured: true,
+  },
+  {
+    publication: 'Northwest Adventure Sports',
+    logo: null,
+    headline: 'Guided Dirt Bike Rides Worth Every Dollar',
+    date: 'Summer 2019',
+    excerpt: 'A full-day guided experience that delivers on every promise — and then some. The Rekluse-equipped fleet and on-trail coaching make this accessible to riders who haven\'t been on a bike in years.',
+    image: '/images/2019/06/Oregon-Motorcycle-Rental-Washington-State-Riding-Location.jpg',
+    featured: false,
+  },
+  {
+    publication: 'Columbia Gorge Magazine',
+    logo: null,
+    headline: 'Local Legends: Oregon Motorcycle Rental',
+    date: 'Spring 2021',
+    excerpt: 'A deep dive into how Doug McDonald turned a passion for enduro singletrack into one of the most respected motorcycle rental and guiding operations in the Pacific Northwest.',
+    image: '/images/2017/02/motorcycle-rental-1.jpg',
+    featured: false,
+  },
+];
+---
+
+<Layout
+  title="Adventure Tour - Motorcycle Adventure | Oregon Motorcycle Rental"
+  description="Oregon Mountain Rentals has been featured in several publications for off road motorcycle adventure tours. We are proud of the experience we provide."
+>
+
+  <section class="hero">
+    <div class="hero-bg">
+      <img src="/images/2016/10/full-BE90ADA7-F2C7-4B80-95AC-CE90FB2BE71E-1024x589.jpg" alt="" class="hero-img" />
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="hero-body wrap">
+      <p class="eyebrow">Media Coverage</p>
+      <h1 class="display hero-title">In the<br>Press.</h1>
+      <p class="hero-sub">Oregon Motorcycle Rental has been featured in publications across the Pacific Northwest and beyond.</p>
+    </div>
+  </section>
+
+  <section class="press-body">
+    <div class="wrap">
+
+      {/* Featured article */}
+      {features.filter(f => f.featured).map(f => (
+        <article class="feature-card feature-card--hero">
+          <div class="feature-img-wrap">
+            <img src={f.image} alt={f.headline} class="feature-img" loading="lazy" />
+          </div>
+          <div class="feature-body">
+            <div class="feature-pub-row">
+              {f.logo
+                ? <img src={f.logo} alt={f.publication} class="pub-logo" />
+                : <span class="pub-name-text">{f.publication}</span>
+              }
+              <span class="feature-date">{f.date}</span>
+            </div>
+            <h2 class="display feature-title">{f.headline}</h2>
+            <p class="feature-excerpt">{f.excerpt}</p>
+          </div>
+        </article>
+      ))}
+
+      {/* Secondary articles */}
+      <div class="features-grid">
+        {features.filter(f => !f.featured).map(f => (
+          <article class="feature-card">
+            <div class="feature-img-wrap">
+              <img src={f.image} alt={f.headline} class="feature-img" loading="lazy" />
+            </div>
+            <div class="feature-body">
+              <div class="feature-pub-row">
+                <span class="pub-name-text">{f.publication}</span>
+                <span class="feature-date">{f.date}</span>
+              </div>
+              <h3 class="display feature-title feature-title--sm">{f.headline}</h3>
+              <p class="feature-excerpt">{f.excerpt}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+  <section class="press-note">
+    <div class="wrap press-note-inner">
+      <div class="press-note-text">
+        <p class="section-label">Media Inquiries</p>
+        <h2 class="display note-title">Working on a story?</h2>
+        <p>We're happy to arrange hosted rides, provide photography assets, and connect you with past clients for comment. Oregon Motorcycle Rental has worked with print, digital, and broadcast media across the Northwest.</p>
+        <p>Reach out to Doug directly to discuss your project.</p>
+      </div>
+      <aside class="press-contact">
+        <p class="section-label">Contact</p>
+        <a href="tel:5092810156" class="press-phone">509-281-0156</a>
+        <a href="mailto:gorgemaster@gmail.com" class="press-email">gorgemaster@gmail.com</a>
+      </aside>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  .hero {
+    position: relative;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    color: var(--cream);
+  }
+  .hero-bg { position: absolute; inset: 0; z-index: 0; }
+  .hero-img { width: 100%; height: 100%; object-fit: cover; object-position: center 40%; }
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(105deg,
+      color-mix(in srgb, var(--ink) 88%, transparent) 0%,
+      color-mix(in srgb, var(--ink) 58%, transparent) 55%,
+      color-mix(in srgb, var(--ink) 22%, transparent) 100%
+    );
+  }
+  .hero-body { position: relative; z-index: 1; padding: 80px 24px; max-width: 640px; }
+  .hero-title { font-size: clamp(64px, 10vw, 120px); line-height: 0.95; margin: 16px 0 24px; color: var(--cream); }
+  .hero-sub { font-size: 20px; line-height: 1.5; max-width: 460px; opacity: 0.88; }
+
+  .press-body { padding: 100px 0; }
+
+  /* Hero feature */
+  .feature-card--hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 460px;
+    border: 2px solid var(--line);
+    margin-bottom: 80px;
+  }
+  .feature-img-wrap { overflow: hidden; }
+  .feature-img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+  .feature-body {
+    padding: 56px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    background: var(--cream-deep);
+    border-left: 4px solid var(--rust);
+  }
+
+  .feature-pub-row {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  .pub-logo { height: 40px; width: auto; object-fit: contain; }
+  .pub-name-text {
+    font-family: 'Big Shoulders Display', sans-serif;
+    font-weight: 900;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--leather);
+  }
+  .feature-date {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--rust);
+    margin-left: auto;
+  }
+
+  .feature-title { font-size: clamp(28px, 3vw, 44px); color: var(--leather); line-height: 1.05; }
+  .feature-title--sm { font-size: clamp(22px, 2.5vw, 32px); }
+  .feature-excerpt { font-size: 17px; line-height: 1.7; color: var(--ink-2); }
+
+  /* Grid of secondary features */
+  .features-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+  .features-grid .feature-card {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid var(--line);
+  }
+  .features-grid .feature-img-wrap { aspect-ratio: 16 / 9; }
+  .features-grid .feature-body {
+    padding: 36px;
+    border-left: none;
+    border-top: 4px solid var(--rust);
+    flex: 1;
+  }
+
+  @media (max-width: 900px) {
+    .feature-card--hero { grid-template-columns: 1fr; min-height: auto; }
+    .feature-card--hero .feature-img-wrap { aspect-ratio: 16 / 9; }
+    .feature-card--hero .feature-body { padding: 36px 24px; border-left: none; border-top: 4px solid var(--rust); }
+    .features-grid { grid-template-columns: 1fr; }
+  }
+
+  .press-note { padding: 80px 0; background: var(--ink); color: var(--cream); }
+  .press-note-inner { display: grid; grid-template-columns: 3fr 2fr; gap: 80px; align-items: start; }
+  .note-title { font-size: clamp(36px, 4.5vw, 60px); color: var(--cream); margin: 12px 0 24px; }
+  .press-note-text p { margin-bottom: 16px; font-size: 17px; line-height: 1.7; opacity: 0.88; }
+  .press-note-text p:last-child { margin-bottom: 0; }
+
+  .press-contact { padding: 36px; border: 2px solid var(--line-dark); }
+  .press-phone {
+    display: block;
+    font-family: 'Big Shoulders Display', sans-serif;
+    font-weight: 900;
+    font-size: 32px;
+    color: var(--rust);
+    text-decoration: none;
+    margin: 10px 0;
+  }
+  .press-phone:hover { color: var(--cream); }
+  .press-email { display: block; font-weight: 700; font-size: 15px; color: var(--cream); opacity: 0.75; text-decoration: none; }
+  .press-email:hover { opacity: 1; color: var(--rust); }
+
+  @media (max-width: 768px) {
+    .press-note-inner { grid-template-columns: 1fr; gap: 40px; }
+  }
+</style>

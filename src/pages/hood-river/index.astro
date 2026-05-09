@@ -1,0 +1,291 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const highlights = [
+  { label: 'Season', value: 'May – October' },
+  { label: 'Terrain', value: 'Dense forest singletrack, technical roots and rocks' },
+  { label: 'Difficulty', value: 'Beginner to Expert' },
+  { label: 'From Portland', value: '1 hour east on I-84' },
+];
+
+const trails = [
+  {
+    name: 'Post Canyon',
+    difficulty: 'Intermediate–Expert',
+    miles: '50+ miles',
+    desc: 'A vast network of purpose-built and natural singletrack in the hills above Hood River. Some of the most technically diverse riding in the state — flowy berms, rock gardens, and steep chutes all within the same ride.',
+  },
+  {
+    name: 'Underhill Trail',
+    difficulty: 'Intermediate',
+    miles: '12 miles',
+    desc: 'Classic Gorge singletrack threading through old-growth forest. Moderate grades, tight switchbacks, and that unmistakable PNW loam that makes every corner feel alive.',
+  },
+  {
+    name: 'Surveyor\'s Ridge',
+    difficulty: 'All Levels',
+    miles: '21 miles',
+    desc: 'Elevated riding with panoramic views of Mt. Hood and the Columbia River Gorge. Mix of open meadow and forested sections — one of the most scenic routes in the region.',
+  },
+];
+---
+
+<Layout
+  title="Motorcycle Rental - Dirt Bike Rental | Oregon Motorcycle Rental"
+  description="Hood River guided motorcycle tours and rentals will take you on the diverse, unrivaled trails in the Columbia River gorge. Book your ride today."
+>
+
+  <section class="hero">
+    <div class="hero-bg">
+      <img src="/images/2017/02/motorcycle-rental-1.jpg" alt="Hood River singletrack riding" class="hero-img" />
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="hero-body wrap">
+      <p class="eyebrow">Oregon — Home Base</p>
+      <h1 class="display hero-title">Hood<br>River.</h1>
+      <p class="hero-sub">World-class singletrack in the Columbia River Gorge. Snowboard in the morning, rip trails in the afternoon. This is why we're based here.</p>
+      <a href="/contact/" class="btn btn-big">Book Hood River</a>
+    </div>
+  </section>
+
+  <section class="highlights-strip">
+    <div class="wrap highlights-inner">
+      {highlights.map(h => (
+        <div class="highlight-item">
+          <span class="highlight-label">{h.label}</span>
+          <span class="highlight-value">{h.value}</span>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="location-intro">
+    <div class="wrap intro-grid">
+      <div class="intro-text">
+        <p class="section-label">The Gorge</p>
+        <h2 class="display intro-title">The trails that started it all.</h2>
+        <p>Hood River is Oregon Motorcycle Rental's home base — and for good reason. The Columbia River Gorge delivers some of the most diverse trail riding in the Pacific Northwest, with thousands of acres of rideable terrain within 20 minutes of downtown Hood River.</p>
+        <p>The combination of volcanic rock, ancient forest, and dramatic elevation change creates terrain that challenges advanced riders while remaining accessible to intermediates with proper guidance. We know every mile of this land.</p>
+        <p>After the ride, Hood River's world-class food and craft beer scene is right there waiting. It's the complete package.</p>
+      </div>
+      <div class="intro-image-stack">
+        <img src="/images/rider-forest.jpg" alt="Rider through Hood River forest" class="stack-img stack-img--main" loading="lazy" />
+        <img src="/images/2017/02/motorcycle-rental-4.jpg" alt="Trail riding in Oregon" class="stack-img stack-img--offset" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <section class="trails-section">
+    <div class="wrap">
+      <p class="section-label">Key Trails</p>
+      <h2 class="display trails-title">Where we ride.</h2>
+      <div class="trails-grid">
+        {trails.map(t => (
+          <div class="trail-card">
+            <div class="trail-header">
+              <h3 class="display trail-name">{t.name}</h3>
+              <div class="trail-meta">
+                <span class="trail-tag">{t.difficulty}</span>
+                <span class="trail-miles">{t.miles}</span>
+              </div>
+            </div>
+            <p class="trail-desc">{t.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="whats-included">
+    <div class="wrap included-grid">
+      <div>
+        <p class="section-label">What's Included</p>
+        <h2 class="display included-title">Everything.<br>You just show up.</h2>
+      </div>
+      <ul class="included-list">
+        <li>Late-model KTM or Husqvarna enduro bike</li>
+        <li>Full riding gear (helmet, jersey, pants, boots, gloves)</li>
+        <li>Rekluse auto-clutch — no stalling on technical terrain</li>
+        <li>Experienced guide who knows every inch of these trails</li>
+        <li>3–4 hour guided ride at your skill level</li>
+        <li>Bike transportation to and from trailhead</li>
+        <li>Snacks and water on the trail</li>
+        <li>Optional on-trail coaching add-on ($50/rider)</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="after-ride">
+    <div class="wrap after-inner">
+      <div class="after-img-wrap">
+        <img src="/images/2017/06/20170603_121736.jpg" alt="After the ride in Hood River" class="after-img" loading="lazy" />
+      </div>
+      <div class="after-text">
+        <p class="section-label">After the Ride</p>
+        <h2 class="display after-title">Hood River is waiting.</h2>
+        <p>Hood River has built a reputation as one of the Pacific Northwest's best outdoor towns — world-class windsurfing and kiteboarding on the Columbia, hiking on Mt. Hood, and a thriving food and craft beer scene that's earned national attention.</p>
+        <p>Double Mountain Brewery and pFriem Family Brewers both sit within a few blocks of downtown. After a full day on the trails, there's no better place to land.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="final-cta">
+    <div class="final-cta-bg"></div>
+    <div class="wrap final-cta-body">
+      <p class="section-label final-label">Book Hood River</p>
+      <h2 class="display final-title">Ready to ride<br>the Gorge?</h2>
+      <a href="tel:5092810156" class="final-phone">509 · 281 · 0156</a>
+      <p class="final-note">Call Doug to check availability and plan your ride.</p>
+      <a href="/contact/" class="btn-outline-light btn-big">Send a Message</a>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  .hero {
+    position: relative;
+    min-height: 88vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    color: var(--cream);
+  }
+  .hero-bg { position: absolute; inset: 0; z-index: 0; }
+  .hero-img { width: 100%; height: 100%; object-fit: cover; object-position: center 30%; }
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(105deg,
+      color-mix(in srgb, var(--ink) 82%, transparent) 0%,
+      color-mix(in srgb, var(--ink) 55%, transparent) 55%,
+      color-mix(in srgb, var(--ink) 20%, transparent) 100%
+    );
+  }
+  .hero-body { position: relative; z-index: 1; padding: 80px 24px; max-width: 680px; }
+  .hero-title { font-size: clamp(80px, 13vw, 160px); line-height: 0.9; margin: 16px 0 24px; color: var(--cream); }
+  .hero-sub { font-size: 20px; line-height: 1.5; max-width: 520px; opacity: 0.88; margin-bottom: 40px; }
+
+  .highlights-strip { background: var(--rust); color: var(--cream); padding: 40px 0; }
+  .highlights-inner {
+    display: flex;
+    align-items: stretch;
+    divide-x: 1px solid;
+    flex-wrap: wrap;
+    gap: 0;
+  }
+  .highlight-item {
+    flex: 1;
+    min-width: 160px;
+    padding: 20px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    border-right: 1px solid color-mix(in srgb, var(--cream) 25%, transparent);
+  }
+  .highlight-item:last-child { border-right: none; }
+  .highlight-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.18em; opacity: 0.7; }
+  .highlight-value { font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: 20px; line-height: 1.2; }
+
+  .location-intro { padding: 100px 0; }
+  .intro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+  .intro-title { font-size: clamp(32px, 4vw, 56px); color: var(--leather); margin: 12px 0 28px; }
+  .intro-text p { margin-bottom: 20px; font-size: 18px; line-height: 1.7; }
+  .intro-text p:last-child { margin-bottom: 0; }
+  .intro-image-stack { position: relative; }
+  .stack-img--main { width: 100%; height: 400px; object-fit: cover; }
+  .stack-img--offset {
+    position: absolute;
+    bottom: -40px;
+    right: -40px;
+    width: 55%;
+    height: 220px;
+    object-fit: cover;
+    border: 6px solid var(--cream);
+    box-shadow: 0 8px 40px color-mix(in srgb, var(--ink) 30%, transparent);
+  }
+
+  .trails-section { padding: 100px 0; background: var(--cream-deep); }
+  .trails-title { font-size: clamp(36px, 4.5vw, 60px); color: var(--leather); margin: 12px 0 56px; }
+  .trails-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+  .trail-card { padding: 40px; background: var(--cream-soft); border-top: 4px solid var(--rust); }
+  .trail-header { margin-bottom: 20px; }
+  .trail-name { font-size: clamp(22px, 2.5vw, 30px); color: var(--leather); margin-bottom: 12px; }
+  .trail-meta { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+  .trail-tag {
+    background: var(--rust);
+    color: var(--cream);
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 4px 10px;
+  }
+  .trail-miles { font-size: 13px; font-weight: 700; color: var(--leather-soft); }
+  .trail-desc { font-size: 16px; line-height: 1.7; color: var(--ink-2); }
+
+  .whats-included { padding: 100px 0; }
+  .included-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+  .included-title { font-size: clamp(36px, 4.5vw, 60px); color: var(--leather); margin: 12px 0 0; }
+  .included-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 12px;
+  }
+  .included-list li {
+    font-size: 17px;
+    padding-left: 28px;
+    position: relative;
+    line-height: 1.45;
+  }
+  .included-list li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--rust);
+    font-weight: 900;
+  }
+
+  .after-ride { padding: 100px 0; background: var(--leather); color: var(--cream); }
+  .after-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+  .after-img-wrap { overflow: hidden; }
+  .after-img { width: 100%; height: 440px; object-fit: cover; display: block; }
+  .after-title { font-size: clamp(32px, 4vw, 52px); color: var(--cream); margin: 12px 0 24px; }
+  .after-text p { font-size: 17px; line-height: 1.7; margin-bottom: 16px; opacity: 0.88; }
+  .after-text p:last-child { margin-bottom: 0; }
+
+  .final-cta {
+    background: var(--ink);
+    color: var(--cream);
+    padding: 100px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .final-cta-bg { position: absolute; inset: 0; background: url('/images/tire-tread.png') repeat center / 320px auto; opacity: 0.05; pointer-events: none; }
+  .final-cta-body { position: relative; z-index: 1; }
+  .final-label { color: color-mix(in srgb, var(--cream) 60%, transparent); }
+  .final-title { font-size: clamp(48px, 8vw, 96px); color: var(--cream); margin: 16px 0 40px; line-height: 0.95; }
+  .final-phone {
+    display: block;
+    font-family: 'Big Shoulders Display', sans-serif;
+    font-weight: 900;
+    font-size: clamp(48px, 9vw, 112px);
+    color: var(--rust);
+    text-decoration: none;
+    line-height: 1;
+    margin-bottom: 24px;
+    letter-spacing: -0.02em;
+  }
+  .final-phone:hover { color: var(--cream); }
+  .final-note { font-size: 18px; opacity: 0.7; margin-bottom: 40px; }
+
+  @media (max-width: 900px) {
+    .intro-grid, .included-grid, .after-inner { grid-template-columns: 1fr; gap: 48px; }
+    .trails-grid { grid-template-columns: 1fr; }
+    .stack-img--offset { display: none; }
+    .after-img { height: 300px; }
+  }
+</style>

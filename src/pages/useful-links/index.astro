@@ -1,0 +1,164 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const linkGroups = [
+  {
+    heading: 'Hood River Dining & Drinks',
+    links: [
+      { name: 'Double Mountain Brewery', url: 'https://doublemountainbrewery.com', note: 'Local craft beer, wood-fired pizza — trail riders\' favorite post-ride spot' },
+      { name: 'pFriem Family Brewers', url: 'https://pfriembeer.com', note: 'Belgian-inspired ales, stunning Columbia River views' },
+      { name: 'Celilo Restaurant & Bar', url: 'https://celilorestaurant.com', note: 'Upscale Pacific Northwest cuisine — great for a celebratory dinner' },
+      { name: 'Ground Espresso Bar', url: 'https://groundespressobar.com', note: 'Start your riding day with the best coffee in Hood River' },
+    ],
+  },
+  {
+    heading: 'Hood River Lodging',
+    links: [
+      { name: 'Hood River Hotel', url: 'https://hoodriverhotel.com', note: 'Classic downtown hotel, walking distance to dining' },
+      { name: 'Gorge View Bed & Breakfast', url: '#', note: 'Comfortable rooms with views over the Columbia River Gorge' },
+      { name: 'Inn at the Gorge', url: '#', note: 'Pet-friendly, bike-friendly, relaxed vibe' },
+    ],
+  },
+  {
+    heading: 'Motorcycle & Gear Shops',
+    links: [
+      { name: 'Pro Caliber Motorsports', url: '#', note: 'KTM and Husqvarna dealer — parts and service nearby' },
+      { name: 'Cascade Racing', url: '#', note: 'Off-road gear and accessories for the Pacific Northwest' },
+      { name: 'Revzilla', url: 'https://revzilla.com', note: 'Online gear retailer — best selection, helpful reviews' },
+    ],
+  },
+  {
+    heading: 'Trail Resources',
+    links: [
+      { name: 'TrailForks', url: 'https://trailforks.com', note: 'Trail maps and conditions for the Columbia River Gorge and Pacific Northwest' },
+      { name: 'Oregon OHV Program', url: 'https://oregon.gov/oprd/ATV/pages/index.aspx', note: 'Oregon State Park OHV regulations, maps, and permits' },
+      { name: 'Washington Trails Association', url: 'https://wta.org', note: 'Trail conditions and access info for Washington State routes' },
+      { name: 'MTB Project — Hood River', url: 'https://mtbproject.com', note: 'Community trail database with difficulty ratings' },
+    ],
+  },
+  {
+    heading: 'Columbia River Gorge',
+    links: [
+      { name: 'Hood River Chamber of Commerce', url: 'https://hoodriver.org', note: 'Events, dining, lodging, and activities in the Gorge' },
+      { name: 'Columbia Gorge National Scenic Area', url: 'https://fs.usda.gov/crgnsa', note: 'Official recreation information and current conditions' },
+      { name: 'Discover Your Northwest', url: 'https://discovernw.org', note: 'Recreation passes and permit information' },
+    ],
+  },
+  {
+    heading: 'Arizona Resources',
+    links: [
+      { name: 'Wickenburg Chamber of Commerce', url: 'https://wickenburgchamber.com', note: 'Dining, lodging, and attractions in the Wickenburg area' },
+      { name: 'Arizona State Parks & Trails', url: 'https://azstateparks.com', note: 'OHV trail information across the state' },
+      { name: 'Hassayampa River Preserve', url: '#', note: 'Nature and wildlife near the Wickenburg riding area' },
+    ],
+  },
+];
+---
+
+<Layout
+  title="Adventure Tour - Mountain Bike Rental | Oregon Motorcycle Rental"
+  description="If you're planning a day of off road motorcycle adventures in Hood River. Here's a list of our favorite establishments in the Columbia River Gorge."
+>
+
+  <section class="page-hero">
+    <div class="wrap">
+      <p class="section-label">Planning Your Trip</p>
+      <h1 class="display page-title">Useful<br>Links.</h1>
+      <p class="page-sub">Our favorite spots for food, lodging, gear, and trail information — everything you need to make the most of your time in the Gorge and beyond.</p>
+    </div>
+  </section>
+
+  <section class="links-body">
+    <div class="wrap">
+      <div class="links-grid">
+        {linkGroups.map(group => (
+          <div class="link-group">
+            <h2 class="display group-heading">{group.heading}</h2>
+            <ul class="link-list">
+              {group.links.map(link => (
+                <li class="link-item">
+                  <a href={link.url} target="_blank" rel="noopener" class="link-name">{link.name}</a>
+                  {link.note && <p class="link-note">{link.note}</p>}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="links-cta">
+    <div class="wrap links-cta-inner">
+      <div>
+        <p class="section-label">Questions?</p>
+        <h2 class="display cta-title">Ask Doug anything.</h2>
+        <p class="cta-sub">Planning a trip to the Gorge or Arizona? Doug knows every restaurant, trail, and campsite in the area. Call or email and he'll set you up right.</p>
+      </div>
+      <div class="cta-contact">
+        <a href="tel:5092810156" class="cta-phone">509-281-0156</a>
+        <a href="/contact/" class="btn btn-big">Send a Message</a>
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  .page-hero {
+    background: var(--ink);
+    color: var(--cream);
+    padding: 80px 0 88px;
+    border-bottom: 4px solid var(--rust);
+  }
+  .page-title { font-size: clamp(64px, 10vw, 128px); color: var(--cream); margin: 0 0 24px; }
+  .page-sub { font-size: 20px; line-height: 1.55; max-width: 560px; opacity: 0.85; }
+
+  .links-body { padding: 100px 0; }
+  .links-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px 80px;
+  }
+
+  .link-group {}
+  .group-heading {
+    font-size: clamp(22px, 2.5vw, 32px);
+    color: var(--leather);
+    margin-bottom: 28px;
+    padding-bottom: 16px;
+    border-bottom: 3px solid var(--rust);
+  }
+
+  .link-list { list-style: none; display: flex; flex-direction: column; gap: 24px; }
+  .link-item {}
+  .link-name {
+    font-weight: 800;
+    font-size: 17px;
+    color: var(--rust);
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+  .link-name:hover { color: var(--leather); text-decoration: underline; }
+  .link-name::after { content: ' ↗'; font-size: 13px; opacity: 0.6; }
+  .link-note { font-size: 15px; line-height: 1.55; color: var(--leather-soft); margin-top: 4px; }
+
+  @media (max-width: 768px) {
+    .links-grid { grid-template-columns: 1fr; gap: 56px; }
+  }
+
+  .links-cta { padding: 80px 0; background: var(--cream-deep); border-top: 4px solid var(--rust); }
+  .links-cta-inner { display: flex; align-items: center; justify-content: space-between; gap: 48px; flex-wrap: wrap; }
+  .cta-title { font-size: clamp(36px, 4.5vw, 60px); color: var(--leather); margin: 12px 0 20px; }
+  .cta-sub { font-size: 17px; line-height: 1.65; max-width: 460px; }
+  .cta-contact { display: flex; flex-direction: column; gap: 16px; align-items: flex-start; flex-shrink: 0; }
+  .cta-phone {
+    font-family: 'Big Shoulders Display', sans-serif;
+    font-weight: 900;
+    font-size: 36px;
+    color: var(--rust);
+    text-decoration: none;
+    line-height: 1;
+  }
+  .cta-phone:hover { color: var(--leather); }
+</style>
