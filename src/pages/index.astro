@@ -29,7 +29,6 @@ import Layout from '../layouts/Layout.astro';
         <div class="section-label">The Ride</div>
         <h2 class="display section-title">Built for experienced riders.</h2>
       </div>
-      <p style="font-size: 18px;">If you've got miles under your belt and want a guide who knows every good line in the Pacific Northwest, rides are now based in Arizona.</p>
     </div>
     <div class="ride-feature">
       <div class="ride-feature-img">
@@ -57,7 +56,7 @@ import Layout from '../layouts/Layout.astro';
   <div class="wrap">
     <div class="proof-header">
       <div class="section-label">What Riders Say</div>
-      <h2 class="display section-title" style="margin: 0 auto 20px; white-space: nowrap; max-width: none;">Over 100 five-star reviews.</h2>
+      <h2 class="display section-title" style="margin: 0 auto 20px; white-space: nowrap; max-width: none;">Over 150 five-star reviews.</h2>
       <div class="stars">★★★★★</div>
       <span class="count">Google &amp; Facebook verified</span>
     </div>
@@ -117,7 +116,7 @@ import Layout from '../layouts/Layout.astro';
             <div class="stat-label">Years guiding</div>
           </div>
           <div>
-            <div class="stat-num">100+</div>
+            <div class="stat-num">150+</div>
             <div class="stat-label">5-star reviews</div>
           </div>
           <div>
@@ -139,21 +138,15 @@ import Layout from '../layouts/Layout.astro';
       <div>
         <div class="section-label">Your Guide</div>
         <h2 class="display">Meet Doug.</h2>
-        <p>Doug McDonald has been running this operation since 2010. He's the guy who sets up your bike, leads the ride, and answers the phone. No middlemen. No call centers.</p>
+        <p>Doug McDonald has been running this operation since 2010. He's the guy who sets up your bike, leads the ride, and answers the phone.</p>
         <p>He'll meet you where you are as a rider and build a day around what you want out of it. That's why people come back year after year.</p>
         <p>Doug now runs the operation full-time in Wickenburg, Arizona. He started Oregon Motorcycle Rental in 2010 and may return to guide in the Pacific Northwest in the future. For now, all rides happen in the Arizona desert.</p>
-        <a href="tel:5092810156" class="btn" style="margin-top: 12px;">Call Doug Directly</a>
+        <a href="tel:5092810156" class="btn" style="margin-top: 12px;">Call Doug</a>
       </div>
     </div>
   </div>
 </section>
 
-<div class="sister">
-  <div class="sister-inner">
-    <span class="sister-label">Winter Riding</span>
-    <span class="sister-text">Doug guides year-round from Wickenburg, Arizona. Book your ride at <a href="https://arizonadirtbikerentals.com">Arizona Dirt Bike Rentals →</a></span>
-  </div>
-</div>
 
 <section class="final-cta">
   <div class="final-cta-bg"></div>
@@ -161,8 +154,7 @@ import Layout from '../layouts/Layout.astro';
     <div class="section-label">Ready to Ride?</div>
     <h2 class="display">Ready to ride <em>Arizona?</em></h2>
     <p class="lede"><strong>Booking is simple. Call or text Doug, tell him what you want out of the day, and he'll get you on the calendar.</strong></p>
-    <a href="https://arizonadirtbikerentals.com" class="btn btn-big" style="margin-bottom: 24px;">Book in Arizona →</a>
-    <a href="tel:5092810156" class="final-phone">509 · 281 · 0156</a>
+<a href="tel:5092810156" class="final-phone">509·281·0156</a>
     <p class="final-note">Phone &amp; text · Licensed, bonded, insured · Se habla español</p>
   </div>
 </section>
@@ -184,7 +176,7 @@ import Layout from '../layouts/Layout.astro';
   .hero-eyebrow { font-size: 18px; font-weight: 800; letter-spacing: 0.22em; text-transform: uppercase; color: var(--rust); margin-bottom: 20px; }
   .hero-sub { font-size: clamp(20px, 2.2vw, 26px); max-width: 48ch; margin-bottom: 40px; color: rgba(253,252,249,0.85); }
   .hero-ctas { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; margin-bottom: 28px; }
-  .hero-note { font-size: 18px; color: rgba(253,252,249,0.55); max-width: 48ch; font-style: italic; }
+  .hero-note { font-size: 18px; color: rgba(253,252,249,0.85); max-width: 48ch; font-style: italic; }
 
   /* PRICE STRIP */
   .price-strip { background: var(--rust); color: #fff; padding: 40px 24px; position: relative; overflow: hidden; }
@@ -279,7 +271,7 @@ import Layout from '../layouts/Layout.astro';
   .sister a:hover { color: var(--rust); }
 
   /* FINAL CTA */
-  .final-cta { position: relative; background: var(--ink); color: var(--cream); text-align: center; padding: 130px 24px; overflow: hidden; }
+  .final-cta { position: relative; background: var(--ink); color: var(--cream); text-align: center; padding: 80px 24px; overflow: hidden; }
   .final-cta-bg { position: absolute; inset: 0; background: url('/images/tire-tread.png') center/cover no-repeat; opacity: 0.55; }
   .final-cta-bg::after { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at center, rgba(23,17,12,0.45) 0%, rgba(23,17,12,0.85) 80%); }
   .final-cta > * { position: relative; }
@@ -287,7 +279,7 @@ import Layout from '../layouts/Layout.astro';
   .final-cta h2 { font-size: clamp(52px, 8.5vw, 120px); margin-bottom: 28px; color: var(--cream); }
   .final-cta h2 em { font-style: normal; color: var(--rust); }
   .final-cta p.lede { font-size: 22px; max-width: 46ch; margin: 0 auto 32px; color: rgba(253,252,249,0.8); }
-  .final-phone { font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: clamp(56px, 8vw, 108px); color: var(--rust); text-decoration: none; display: block; margin: 24px 0; letter-spacing: -0.01em; }
+  .final-phone { font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: clamp(56px, 8vw, 108px); color: var(--rust); text-decoration: none; display: block; margin: 12px 0; letter-spacing: -0.01em; }
   .final-phone:hover { color: var(--cream); }
   .final-note { font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(253,252,249,0.55); font-weight: 600; }
 </style>
